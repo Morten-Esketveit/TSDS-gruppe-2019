@@ -3,6 +3,7 @@
 We draw on network theory to characterize how airports are connected to each other and analyze what role the individual airport plays in the network of airports. The ultimate aim of this analysis is to assess whether flight prices between airports depend on the role each airport plays in the network.\par
 We view airports as nodes in the network, with flights (or connections) representing links between airport. Two airports are linked if there is at least one commercial flight between them in the time frame considered.
 
+
 \subsection{Airline business models}
 As outlined in the background in section \ref{subsec:b_deregulation} The common trend is that airlines specialize in either of two mayor business models with very different network characteristics.
 
@@ -10,7 +11,7 @@ As outlined in the background in section \ref{subsec:b_deregulation} The common 
 
 
 \subsubsection{Hub-and-spoke network}
-The
+\citet{o1987quadratic} presented a hub-and-spoke network as a simple single-assignment model such that non-hub nodes only have one edge, namely the one connecting them to a hub. Thus, a single-hub route network connecting $n$ nodes would only need $n-1$ routes
 A hub-and-spoke network
 
 
@@ -21,13 +22,15 @@ A hub-and-spoke network
   \caption{Point-to-point network (Panel a) vs hub-and-spoke network (Panel b)}
     \includegraphics[width=1. \textwidth]{03_figures/Bryan_1999_networks}
     \sourcecenter{\citet{bryan1999hub}}
-  \label{fig:Bryan1999}
+  \label{fig:different_networks}
 \end{figure}
 
 
 
 \subsection{Network Theory}
 \label{subsec:Network Theory}
+We draw on network theory to characterize how airports are connected to each other and analyze what role the individual airport plays in the network of airports. The ultimate aim of this analysis is to assess whether flight prices between airports depend on the role each airport plays in the network. \\
+We view airports as nodes in the n
 
 \subsubsection{Network Characteristics}
 Given the \textit{spoke and hub} nature of air transport, we expect the network to have some number of airports that are connected to all or most airports in its geographical vicinity, and well connected to similar airports in other regions. This pattern may be repeating to some extent, insofar as there may be regional, national and international hubs, depending on the size of the country. \\
@@ -43,9 +46,6 @@ As we will see in the data analysis, flights from airport i to airport j, usuall
 For parts of the analysis, we view the network as weighted, i.e. that not all links are considered equal. Specifically, we let the number of flights between airports determine the weight of the link between the airports. 
 \medskip
 The considered time frame clearly matters for the characteristics of the network. Considering a years worth of flights will produce far more links in the network than considering the flights that take place on a particular day. In practice, we analyse different time periods. 
-
-
->>>>>>> f456b818a2fb556eea1ca8e72fb081a424cd5779
 
 
 %Notes:
