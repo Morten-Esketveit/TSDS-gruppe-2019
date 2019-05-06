@@ -30,7 +30,18 @@ A hub-and-spoke network
 We draw on network theory to characterize how airports are connected to each other, what role the individual airport plays
 =======
 We draw on network theory to characterize how airports are connected to each other and analyze what role the individual airport plays in the network of airports. The ultimate aim of this analysis is to assess whether flight prices between airports depend on the role each airport plays in the network. \\
-We view airports as nodes in the n
+We view airports as nodes in the network, with flights (or connections) representing links between airport. Two airports are linked if there is at least one commercial flight between them in the time frame considered. \\
+
+\subsubsection{Network Characteristics}
+Given the \textit{spoke and hub} nature of air transport, we expect the network to have some number of airports that are connected to all or most airports in its geographical vicinity, and well connected to similar airports in other regions. This pattern may be repeating to some extent, insofar as there may be regional, national and international hubs, depending on the size of the country. \\
+In the data, we will expect to see this borne out in the degree distribution
+
+\subsubsection{A Directed or Undirected Network}
+Although individual flights are clearly directed, going from one airport to the other, we will primarily view the network as undirected. The reason being, that connections between airports are typically undirected. 
+% Tjek at nedenstående er rigtigt i data. 
+As we will see in the data analysis, flights from airport i to airport j, usually implies flights from airport j to airport i. We believe that this approach to the network of airports is well suited for our analysis, that focusses exclusively on the effect on prices. An analysis of e.g. how delays propagate through the network, would require viewing links as directed and including time in a more intricate manner.\\
+
+
 
 >>>>>>> f456b818a2fb556eea1ca8e72fb081a424cd5779
 
