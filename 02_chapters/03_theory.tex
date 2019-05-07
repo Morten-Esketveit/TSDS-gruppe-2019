@@ -46,17 +46,11 @@ We draw on network theory to characterize how airports are connected to each oth
 We view airports as nodes in the n
 
 \subsubsection{Network Characteristics}
-<<<<<<< HEAD
-Given the \textit{spoke and hub} nature of air transport, we expect the network to have some number of airports that are connected to all or most airports in its geographical vicinity, and well connected to similar airports in other regions. This pattern may be repeating to some extent, insofar as there may be regional, national and international hubs, depending on the size of the country. \\
-In the data, we will expect to see this borne out in the degree distribution, which we (perhaps somewhat stylized) would expect to be bimodal, with a group of airports that have a large degree (hubs), and a larger group of airports with a lower degree (spokes). A more realistic expectation is perhaps, that it is multimodal, with different types of hubs (regional, national, international). It may also be, that these hubs vary so much that actual peaks will be hard to discern in the degree distribution.
-% Skriv ovenstående om efter vi har set degree distribution i data.
-=======
 Given the \textit{spoke and hub} nature of air transport, we expect the network to have some number of airports that are connected to all or most airports in its geographical vicinity, and well connected to similar airports in other regions. This pattern may be repeating to some extent, insofar as there may be regional, national and international hubs, depending on the size of the country. \\ \medskip
 In the data, we will expect to see this borne out in the degree distribution, which we (perhaps somewhat stylized) would expect to be bimodal, with a group of airports that have a large degree (hubs), and a larger group of airports with a lower degree (spokes). A more realistic expectation is perhaps, that it is multimodal, with different types of hubs (regional, national, international). It may also be, that these hubs vary so much that actual peaks will be hard to discern in the degree distribution. \\
 \medskip
-We expect the network to be sparse, i.e. that the number of links is (much) lower than the number of possible links. This reflects the previously described intuition, that small local airports are likely to have a low number of links, particularly relative to the possible number of links. We further expect the network to be connected, in the sense that, given an appropriate time frame, there will always be a path from one airport to the other (through some number of other airports). 
-% Skriv ovenstående om efter vi har set degree distribution i data. 
->>>>>>> 0a3cd5c21d27353cee7fa21002992beba7e1d6b8
+We expect the network to be sparse, i.e. that the number of links is (much) lower than the number of possible links. This reflects the previously described intuition, that small local airports are likely to have a low number of links, particularly relative to the possible number of links. We further expect the network to be connected, in the sense that, given an appropriate time frame, there will always be a path from one airport to the other (through some number of other airports).
+% Skriv ovenstående om efter vi har set degree distribution i data.
 
 \subsubsection{A Directed or Undirected Network}
 Although individual flights are clearly directed, going from one airport to the other, we will primarily view the network as undirected. The reason being, that connections between airports are typically undirected.
@@ -64,15 +58,9 @@ Although individual flights are clearly directed, going from one airport to the 
 As we will see in the data analysis, flights from airport i to airport j, usually implies flights from airport j to airport i. We believe that this approach to the network of airports is well suited for our analysis, that focusses exclusively on the effect on prices. An analysis of e.g. how delays propagate through the network, would require viewing links as directed and including time in a more intricate manner.\\
 
 \subsubsection{Weighted Network and Temporal Considerations}
-<<<<<<< HEAD
 For parts of the analysis, we view the network as weighted, i.e. that not all links are considered equal. Specifically, we let the number of flights between airports determine the weight of the link between the airports.
-\medskip
-The considered time frame clearly matters for the characteristics of the network. Considering a years worth of flights will produce far more links in the network than considering the flights that take place on a particular day. In practice, we analyse different time periods.
-=======
-For parts of the analysis, we view the network as weighted, i.e. that not all links are considered equal. Specifically, we let the number of flights between airports determine the weight of the link between the airports. 
 \medskip \\
-The considered time frame clearly matters for the characteristics of the network, since not all flights between airports take place every day or even every week. Considering a years worth of flights will produce far more links in the network than considering the flights that take place on a particular day. In practice, we analyse different time periods. 
->>>>>>> 0a3cd5c21d27353cee7fa21002992beba7e1d6b8
+The considered time frame clearly matters for the characteristics of the network, since not all flights between airports take place every day or even every week. Considering a years worth of flights will produce far more links in the network than considering the flights that take place on a particular day. In practice, we analyse different time periods.
 
 
 %Notes:
