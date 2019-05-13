@@ -10,3 +10,8 @@ main.run.xml
 main.synctex.gz
 Exam/Hub-and-spoke/.ipynb_checkpoints/BA_example-checkpoint.ipynb
 *.log
+Exam/geckodriver.log
+Exam/.ipynb_checkpoints/scraping_code-checkpoint.ipynb
+Exam/geckodriver.log
+*.log
+Exam/.ipynb_checkpoints/scraping_code-checkpoint.ipynb
