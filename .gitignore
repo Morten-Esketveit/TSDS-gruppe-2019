@@ -1,4 +1,4 @@
-
+# LaTeX builder
 main-blx.bib
 main.aux
 main.bbl
@@ -9,11 +9,13 @@ main.pdf
 main.run.xml
 main.synctex.gz
 
-# while scraping
+# While scraping
 Exam/scraping_code.ipynb
 
 # Logs and checkpoints
 *.log
+.ipynb_checkpoints
+Exam/geckodriver.log
 Exam/.ipynb_checkpoints/
 Exam/Graphics/.ipynb_checkpoints/
 
@@ -23,3 +25,5 @@ Exam/BTSTable6.csv
 Exam/Data/2007.csv.bz2
 Exam/Data/StatComputing2007.csv
 Exam/StatComputing2007.csv
+
+# Other
