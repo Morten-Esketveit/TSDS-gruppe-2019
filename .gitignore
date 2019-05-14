@@ -1,4 +1,4 @@
-# LaTeX builder
+
 main-blx.bib
 main.aux
 main.bbl
@@ -8,22 +8,12 @@ main.out
 main.pdf
 main.run.xml
 main.synctex.gz
-
-# While scraping
-Exam/scraping_code.ipynb
-
-# Logs and checkpoints
+*.ipynb_checkpoints*
 *.log
-.ipynb_checkpoints
-Exam/geckodriver.log
-Exam/.ipynb_checkpoints/
-Exam/Graphics/.ipynb_checkpoints/
-
-# Files > 100 MB
-Exam/Flights.pkl
 Exam/BTSTable6.csv
 Exam/Data/2007.csv.bz2
 Exam/Data/StatComputing2007.csv
+Exam/Flights.pkl
 Exam/StatComputing2007.csv
-
-# Other
+Exam/scraping_code.ipynb
+Exam/2007.csv.bz2
