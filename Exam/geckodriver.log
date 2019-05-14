@@ -5412,13 +5412,13 @@ console.error: BroadcastService:
   Stack:
     remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:190:13
 
-JavaScript error: resource://gre/modules/WebProgressChild.jsm, line 61: TypeError: this.mm.content is null
-[Parent 22572, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Parent 22572, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 22900, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 22900, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 8932, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 332
-[Child 8932, [Parent 22572, Gecko_IOThread] WARNING: pipe errconsole.error: BroadcastService: 
+1557733731007	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\morte\\AppData\\Local\\Temp\\rust_mozprofile.SENJi2JGVaqn"
+1557733732470	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1557733732471	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1557733732471	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1557733735323	Marionette	INFO	Listening on port 52456
+1557733735442	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
   receivedBroadcastMessage: handler for
   remote-settings/monitor_changes
   threw error:
@@ -5426,7 +5426,7 @@ JavaScript error: resource://gre/modules/WebProgressChild.jsm, line 61: TypeErro
   Stack:
     remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:190:13
 
-1557732511510	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1557733773121	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
 bail@chrome://marionette/content/sync.js:224:64
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
@@ -5476,6 +5476,77 @@ JavaScript error: , line 0: InvalidStateError: An attempt was made to use an obj
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: https://s0.2mdn.net/ads/studio/cached_libs/preloadjs_1.0.0_55e44727ad1a72cb590cb504b5394b25_min.js, line 13: TypeError: Argument 1 is not valid for any of the 1-argument overloads of URL.createObjectURL.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
@@ -5510,8 +5581,139 @@ JavaScript error: , line 0: InvalidStateError: An attempt was made to use an obj
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: https://s.go-mpulse.net/boomerang/QRHAF-VKPV6-ZTS8J-965A3-72Q93, line 16: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
@@ -5550,41 +5752,7 @@ JavaScript error: https://s.go-mpulse.net/boomerang/QRHAF-VKPV6-ZTS8J-965A3-72Q9
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1199,1607)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 553, 1199, 1607
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1129,1982)texture11: false Code: 0x8007000e
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1129,2117)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1199,1607)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 688, 1199, 1607
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1129,2117)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1199,1607)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 688, 1199, 1607
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1129,2117)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,1807)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 488, 1203, 1807
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,1807)texture11: false Code: 0x8007000e
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,1807)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 488, 1203, 1807
-JavaScript error: https://js.skyscnr.com/sttc/shared-libs/trackolding/client-tracking-sync.2c568ae464f71e94b9ff.js, line 0: Error: An error occured while handling event topic 'mixpanel-track'. Error: out of memory
-JavaScript error: https://js.skyscnr.com/sttc/shared-libs/react-dom/react-dom16.2.0.js, line 9: Error: Minified React error #183; visit http://facebook.github.io/react/docs/error-decoder.html?invariant=183 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+JavaScript error: https://s0.2mdn.net/ads/studio/cached_libs/preloadjs_1.0.0_55e44727ad1a72cb590cb504b5394b25_min.js, line 13: TypeError: Argument 1 is not valid for any of the 1-argument overloads of URL.createObjectURL.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
@@ -5604,257 +5772,19 @@ JavaScript error: , line 0: InvalidStateError: An attempt was made to use an obj
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-JavaScript error: , line 0: uncaught exception: out of memory
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(375,313)texture11: false Code: 0x8007000e
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(375,312)texture11: false Code: 0x8007000e
-JavaScript error: , line 0: uncaught exception: out of memory
-[GFX1-]: Failed to create render target texture: 0x887a0005
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: GFX: D3D11 detected a device reset in Present
-[GFX1-]: D3D11 swap chain failed to present: 0x887a0005
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(1203,2183)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: [D3D11] 2 CreateTexture2D failure Size: Size(375,313)texture11: false Code: 0x8007000e
-[GFX1-]: Failed buffer for 1175, 155, 375, 313
-[GFX1-]: Could not create swap chain: 0x887a0005
-[GFX1-]: [D3D11] create vertex buffer failed: 0x887a0005
-[GFX1-]: [D3D11] failed to get compositor device attachments
-[GFX1-]: [D3D11] Failed to init compositor with reason: FEATURE_FAILURE_D3D11_VERTEX_BUFFER
-[GFX1-]: Compositors might be mixed (3,1)
-JavaScript error: , line 0: uncaught exception: out of memory
-JavaScript error: https://js.skyscnr.com/sttc/sol/results.c52167b9770a66565f0e.js, line 1: TypeError: can't assign to property "etag" on "out of memory": not an object
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 28, 312, 1129, 2117
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1604, 967
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-[GFX1-]: Failed buffer for 0, 0, 1604, 967
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1604,967) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1604,967) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1253,760) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1563,848) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1251,760) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1563,847) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1252,758) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1563,845) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1254,758) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1583, 3200
-[GFX1-]: Failed buffer for 351, 155, 1203, 2183
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1254,759) Status: 10 format 1
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1563,848) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1604, 967
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1604,867) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1604, 967
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1141,850) Status: 10 format 1
-[GFX1-]: Failed buffer for 0, 0, 1604, 967
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1604,957) Status: 10 format 1
-out of memory: 0x0000000000000023 bytes requested
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1563,847) Status: 10 format 1
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1252,758) Status: 10 format 1
-out of memory: 0x0000000000002000 bytes requested
-_create_dc_and_bitmap: Not enough memory resources are available to process this command.
-[GFX1]: Failed to create similar cairo surface! Size: Size(1563,844) Status: 10 format 1
-Exiting due to channel error.
-Exiting due to channel error.
-1557738743354	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\thorn\\AppData\\Local\\Temp\\rust_mozprofile.MvoyJoDjUoQY"
-1557738744170	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
-1557738744170	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
-1557738744170	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
-1557738746215	Marionette	INFO	Listening on port 49647
-1557738746635	Marionette	WARN	TLS certificate errors will be ignored for this session
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
@@ -5862,17 +5792,30 @@ JavaScript error: , line 0: InvalidStateError: An attempt was made to use an obj
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: https://s.go-mpulse.net/boomerang/QRHAF-VKPV6-ZTS8J-965A3-72Q93, line 16: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
@@ -5888,39 +5831,31 @@ JavaScript error: , line 0: InvalidStateError: An attempt was made to use an obj
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-console.error: BroadcastService: 
-  receivedBroadcastMessage: handler for
-  remote-settings/monitor_changes
-  threw error:
-  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
-  Stack:
-    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:190:13
-
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
@@ -5934,6 +5869,51 @@ JavaScript error: , line 0: InvalidStateError: An attempt was made to use an obj
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
@@ -5941,33 +5921,19 @@ JavaScript error: , line 0: InvalidStateError: An attempt was made to use an obj
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
@@ -6009,31 +5975,21 @@ JavaScript error: , line 0: InvalidStateError: An attempt was made to use an obj
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
@@ -6044,73 +6000,9 @@ JavaScript error: , line 0: InvalidStateError: An attempt was made to use an obj
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 874: NS_ERROR_NOT_INITIALIZED: 
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
-JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/229120/32687478/dcm/dcmads.js, line 847: NS_ERROR_FAILURE: 
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
