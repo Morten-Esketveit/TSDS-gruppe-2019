@@ -8,12 +8,10 @@ main.out
 main.pdf
 main.run.xml
 main.synctex.gz
-*.ipynb_checkpoints*
+.ipynb_checkpoints
 *.log
+*.bz2
 Exam/BTSTable6.csv
-Exam/Data/2007.csv.bz2
 Exam/Data/StatComputing2007.csv
 Exam/Flights.pkl
 Exam/StatComputing2007.csv
-Exam/scraping_code.ipynb
-Exam/2007.csv.bz2
