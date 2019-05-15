@@ -62,5 +62,63 @@ For parts of the analysis, we view the network as weighted, i.e. that not all li
 \medskip \\
 The considered time frame clearly matters for the characteristics of the network, since not all flights between airports take place every day or even every week. Considering a years worth of flights will produce far more links in the network than considering the flights that take place on a particular day. In practice, we analyse different time periods.
 
+\subsubsection{Air transport as a scale-free network}
+A scale-free network is a network whose degree distribution follows a power law, that is: $p_k \sim k^{-\gamma}$. It is a central characteristic of scale-free networks, that they include 'hubs' - nodes that have a far higher degree than the average degree. Air transport is - quite literally - a text-book example of a scale-free network, see chapter 4 of \cite{Barabasi}. As we will see in \ref{sec:empirical}, this is reflected in the degree distribution, where most nodes have a low degree, but some nodes (hubs) have a very high degree.  
+% Incorporate insights from Barabasi ch. 4, e.g.  
 
+
+\subsubsection{Selected Network Measures}
+In the course of the analysis, we draw upon a variety of measures to characterize the network. In the choice of measures, we look to \citet{chi2004structural}. In their paper, they use four measures: average degree, clustering coefficient, average shortest path length
+\footnote{In their paper, this measure is referred to as diameter, however we follow \citet{Barabasi} and use diameter to denote the maximum distance (node-wise) in the network.}, and efficiency. We further include diameter, %and others?. 
+\medskip
+\textbf{Average Degree} \\
+The degree of node \textit{i} is the number of nodes with which node \textit{i} share an edge. In our cases, the degree of an airport is the number of airports to which it has flights (or that have flights to itself). 
+The average degree is then simply the average across nodes. Average degree is calculated as: 
+\begin{align}
+    \text{Average degree} = \frac{1}{N} \sum_{i = 1}^N k_i = \frac{2L}{N}
+\end{align}
+\medskip
+\textbf{Clustering Coefficient} \\
+The clustering coefficient for a given node \textit{i} is given as: 
+\begin{align}
+    C_i = \frac{2L_i}{k_i(k_i-1)}
+    \intertext{The clustering coefficient of the network is then given by:}
+    C = \frac{1}{N} \sum^N_{i=1} C_i
+\end{align}
+The clustering coefficient for a single node is equal to the fraction of possible edges between node \textit{i}'s neighbors (nodes it is connected to) that are found in the network. 
+\medskip
+\textbf{Average Shortest Path Length} \\
+The average shortest path length is defined as: 
+\begin{align}
+    a = \sum_{s,t \in V} \frac{d(s,t)}{N(N-1)}
+\end{align}
+Where V is the set of nodes in the network, and N is the number of nodes.
+
+\medskip
+\textbf{Diameter} \\
+The diameter is the maximum shortest path length between any two nodes in the network. \\
+\medskip
+\textbf{Betweenness Centrality} \\
+Finally, we also calculate the betweenness centrality. For node \textit{i}, this is the fraction of shortest paths between all nodes in the network that pass through node \textit{i}. \cite{brandes2008variants} 
 %Notes:
+
+
+
+\subsection{Predicting Flight Prices Using Machine Learning Techniques}
+In order to predict prices we use a linear prediction model including network characteristics and distance as predictors.\footnote{This section draws on chapter 10 in \citet{raschka2015python}.} We write our prediction model as
+$$
+p_i = w_0 + W X_i 
+$$
+where $p_i$ is the price of a given flight, $w_0$ is the bias/intercept, $X_i$ is a vector of predictors, and $W$ is a vector of corresponding weights. 
+
+To find the weights that makes the most accurate predictions we need to define a cost function. The standard cost function estimating a linear model is the \textbf{Mean Squared Error (MSE)}:
+$$
+\text{MSE}=\frac{1}{N} \sum_i^N (y_i - (w_i + WX_i)^2
+$$
+We apply some other cost functions such as the LASSO and the RIDGE where complexity is penalized in order to avoid over-fitting.
+
+The cost function is minimized using gradient descent which is a numerical optimization. The model is trained until it has reached threshold or stopped reducing the value of the cost function.%% 
+
+To further reduce the chance of over-fitting, we use a k-fold cross validation. We divide the data into a training set and a test set k times, and estimate and evaluate the model for each set. 
+
+Finally, we tune the hyperparameters in our prediction model using grid search.
