@@ -3,7 +3,18 @@
 \subsection{US airline deregulation}
 \label{subsec:b_deregulation}
 The classic air transport network consisted of simple point-to-point connections directly linking mayor cities as there were are relatively few number of flights overall \cite{marti2015efficiency}. One exception was when Delta Airlines in 1955...
-The US Airline Deregulation Act of 1978 was immediately followed by drastic changes to the structure of the aviation industry \citep{daraban2012low}.
+The US Airline Deregulation Act of 1978 was immediately followed by drastic changes to the structure of the aviation industry \citep{daraban2012low}. 
 
 \subsection{Fare determination}
 \label{subsec:b_fare}
+\subsection{Modelling Airport Network}
+\citet[pp. 41-42]{costa2011analyzing} provides a brief overview on the literature of networks in the context of airports including important findings and methodology. In this literature airports are defined as nodes, and flights as edges. Typically these networks are treated as directed although most flights are back and forth between two cities. Among the highlighted findings is that airport networks seems to follow the power law (this is the case for studies of the whole World, India, Brazil, and the US which in short means that the networks are characterized by a few large hubs with a much higher degree than the average airport.\footnote{Contrary to this \citet{he2004statistics} finds that the Chinese network of airports does not follow the power law.} It is further suggested that the topology of the network is primarily determined by GDP and population size across cities in the network. \\
+\citet{chi2004structural} s how the US airport network is affected by "errors" and "attacks". Their dataset covers 215 US airports, and flights in a specific week. To simulate an attack, they successively remove airports in order of importance, starting with the most connected airport. Conversely, to simulate an error, the authors remove airports in order of fewest connections. They then investigate how errors and attacks respectively influence key topological measures, specifically the average degree, the clustering coefficient, the diameter and efficiency. \\
+They find, that these measures are affected far more by removal of the most well connected airports, compared to removal of the least connected airports. \\
+% Pointe: "The removal of a few most connected nodes can damage the network".
+% Weight distribution (number of flights as weights) as well as degree distribution.
+\citet{rocha2017dynamics} outlines the fundamental properties of airport networks and surveys the literature on the dynamic modelling of these networks. He divides the research on dynamic modelling into two categories one in which long-term structural changes are analyzed using network ``snapshots'' and one that focuses on short-term changes which is used to analyze how delays propagate through the network and the logistics of the airport industry. Considering the first category, the literature mainly focuses on changes in basic network statistics over time. First, it is described how the deregulation of the American transportation sector changed the airport network from point-to-point to hub-and-spoke systems. Even though the airport networks have changed continually since then the degree distribution seems to be quite constant. On the other hand betweenness centrality and clustering structure of the network seems to change over time. \\
+Looking at the short-term dynamics it is found that airports that may be close in the static network can be quite far away from each other in a dynamic network since some routes are operated very infrequently.  
+
+
+ 
