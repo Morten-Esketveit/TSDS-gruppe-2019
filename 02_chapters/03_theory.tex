@@ -104,21 +104,3 @@ Finally, we also calculate the betweenness centrality. For node \textit{i}, this
 
 
 
-\subsection{Predicting Flight Prices Using Machine Learning Techniques}
-In order to predict prices we use a linear prediction model including network characteristics and distance as predictors.\footnote{This section draws on chapter 10 in \citet{raschka2015python}.} We write our prediction model as
-$$
-p_i = w_0 + W X_i 
-$$
-where $p_i$ is the price of a given flight, $w_0$ is the bias/intercept, $X_i$ is a vector of predictors, and $W$ is a vector of corresponding weights. 
-
-To find the weights that makes the most accurate predictions we need to define a cost function. The standard cost function estimating a linear model is the \textbf{Mean Squared Error (MSE)}:
-$$
-\text{MSE}=\frac{1}{N} \sum_i^N (y_i - (w_i + WX_i)^2
-$$
-We apply some other cost functions such as the LASSO and the RIDGE where complexity is penalized in order to avoid over-fitting.
-
-The cost function is minimized using gradient descent which is a numerical optimization. The model is trained until it has reached threshold or stopped reducing the value of the cost function.%% 
-
-To further reduce the chance of over-fitting, we use a k-fold cross validation. We divide the data into a training set and a test set k times, and estimate and evaluate the model for each set. 
-
-Finally, we tune the hyperparameters in our prediction model using grid search.
