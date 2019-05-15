@@ -19,6 +19,13 @@ In the end, we use clustering coefficient, betweenness and degree as features in
 
 % Figur med hhv. degree distribution (til venstre) og betweenness centrality (højre)?
 
+\begin{figure}[H]
+  \centering
+  \caption{Domestic flights network, 2007}
+    \includegraphics[width=1. \textwidth]{Figures/Exam/map_general}
+  \label{fig:map_general}
+\end{figure}
+
 \subsection{Network vulnerability}
 We conduct an analysis of how the network is affected when certain nodes are removed. This analysis is, broadly, in line with the analysis in \cite{chi2004structural}. \\
 The figure below shows how key network characteristics (average degree, clustering coefficient and global efficiency) are affected, when nodes are removed. One curve corresponds to removal of the most connected nodes, this is what we refer to as an 'attack' on the network, where the hubs are targeted. \\
@@ -32,7 +39,7 @@ It should be noted, that in this section we analyze the network as it is in our 
     \includegraphics[width=1. \textwidth]{Exam/Figures/attacksanderrors.png}
   \label{fig:attacks_and_errors}
 \end{figure}
-As the figure shows, the removal of a relatively small number of hubs can dramatically alter network characteristics. The network is thus somewhat vulnerable to 'attacks' on the most connected airports. \\ In the figure, we also show the effect of removing random nodes. Note, that each point represents a "new" network of randomly chosen nodes in the original network. Nodes left out in the first observation may therefore be present in the second observation. Clearly, 
+As the figure shows, the removal of a relatively small number of hubs can dramatically alter network characteristics. Unsurprisingly, removal of the least important nodes increases the measures. The network is thus somewhat vulnerable to 'attacks' on the most connected airports. \\ In the figure, we also show the effect of removing random nodes. Note, that each point represents a "new" network of randomly chosen nodes in the original network. Nodes left out in the first observation may therefore be present in the second observation.  Removal of random nodes has relatively little effect on average degree or the clustering coefficient of the network, again pointing to the fact that the network is vulnerable only to a concerted attack on important hubs. \\ 
 
 \subsection{Predicting Flight Prices - Do Network-related Features add Predictive Power?}
 Our set of network-related features includes, for both origin and destination airport: Betweenness centrality, degree and clustering coefficient. \\
