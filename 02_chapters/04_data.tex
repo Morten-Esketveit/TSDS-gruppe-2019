@@ -11,17 +11,17 @@ In general, we have three types of data:
 \end{itemize}
 
 \subsection{Airport Data}
-Data on airports 
-Data on airports comes from two overlapping sources. Firstly, we have a dataset from the 2009 Statistical Computing Data Expo\footnote{Available at \url{http://stat-computing.org/dataexpo/2009/}}. This dataset contains information 3376 US airports, and the unique IATA\footnote{International Air Transport Association} code, airport name, city, country and geographical location in WTS84 coordinates. This dataset contains 3.376 observations of individual airports. As will be described in \ref{subsec:Flight_Data}, we only have information on flights/connections to and from a subset of these. A likely explanation is, that a number of these airports are not used for commercial air transport, but rather for e.g. training/sports purposes.\par
+Data on airports comes from OpenFlights.\footnote{Available at: \url{https://openflights.org/data.html}} The dataset contains airport IATA code, name, city, country, geographical location (crs: WTS84), as well as a unique OpenFlights identifier, ICAO code and altitude. The dataset contains information on a total of 7698 airports worldwide, of which 1518 are located in the United States. Throughout the analysis, we focus on the airports that are found at least once in our dataset on flights, which is a total of 358 airports in 2018.
+%Data on airports comes from two overlapping sources. Firstly, we have a dataset from the 2009 Statistical Computing Data Expo\footnote{Available at \url{http://stat-computing.org/dataexpo/2009/}}. This dataset contains information 3376 US airports, and the unique IATA\footnote{International Air Transport Association} code, airport name, city, country and geographical location in WTS84 coordinates. This dataset contains 3.376 observations of individual airports. As will be described in \ref{subsec:Flight_Data}, we only have information on flights/connections to and from a subset of these. A likely explanation is, that a number of these airports are not used for commercial air transport, but rather for e.g. training/sports purposes.\par
 % Tjek at det reelt er WTS84 koordinater - det ser sådan ud.
-Secondly, we have a dataset on airports from OpenFlights\footnote{Available at: \url{https://openflights.org/data.html}}. This dataset contains the same information as the above, but further includes inter alia a unique 'OpenFlights identifier', ICAO code, and altitude. Furthermore, this dataset contains airports from all over the world.
+%Secondly, we have a dataset on airports from OpenFlights\footnote{Available at: \url{https://openflights.org/data.html}}. This dataset contains the same information as the above, but further includes inter alia a unique 'OpenFlights identifier', ICAO code, and altitude. Furthermore, this dataset contains airports from all over the world.
 
-We will primarily use the OpenFlights data, whenever the analysis has a global scope. This dataset contains information on 7543 individual airports.
+%We will primarily use the OpenFlights data, whenever the analysis has a global scope. This dataset contains information on 7543 individual airports.
 
-\subsection{Flight/Connection Data}
+\subsection{Flights Data}
 \label{subsec:Flight_Data}
-Flight data comes from the 2009 Statistical Computing Data Expo. Data is available for the period 1987-2008, and  includes information on almost 120 million commercial flights within the US. For each flight, we have a range of information, including the aircraft carrier, origin and destination (IATA coded), distance travelled, time in air date etc. For a single year (2007) there are 7.453.215 observations on a total of 29 variables. Flight data can be merged with airport data using the IATA codes on airports. \medskip\\
-We also have global connection data from OpenFlights. Connection data contains a single observation for a given route between airports, as opposed to observations for every single flight in the flights data. The dataset contains 67.663 directed connections between 3.321 airports. Note, that the connection data was last updated in 2014. Neither the connection data nor the flight data is thus up to date, and subsequent changes to the network will be a potential source of error in our analysis.
+Flight data comes from the Bureau of Transportation Statistics\footnote{See \url{https://openflights.org/data.html}}. We have flight data for 2007 and 2018. Each of the two datasets include information on more than 7 million commercial flights within the US. For each flight, we have a range of information, including the aircraft carrier, origin and destination (IATA coded), distance travelled, time in air date etc. Flight data can be merged with airport data using the IATA codes on airports. \medskip\\
+We only use the 2007 data to assess how the network has changed from 2007 to 2018. 
 
 %% Update: Flights data fra bts.gov og fra stat-comp (men det er igen fra bts.gov).
 % Airports data: Bruger kun OpenFlights datasættet. 
@@ -33,12 +33,12 @@ We also have global connection data from OpenFlights. Connection data contains a
 %Data on prices are scraped from the internet. Various sites contain flight prices (Skyscanner, Momondo, Flightfinder, Expedia mv.). Our choice of site will be guided by practical concerns.
 %\par
 %Alternative data:  \url{http://stat-computing.org/dataexpo/2009/}
-\begin{figure}[H]
-  \centering
-  \caption{Airports}
-    \includegraphics[width=1. \textwidth]{Exam/Airports_WorldMap}
-  \label{fig:airports}
-\end{figure}
+%\begin{figure}[H]
+%  \centering
+%  \caption{Airports}
+%    \includegraphics[width=1. \textwidth]{Exam/Airports_WorldMap}
+%  \label{fig:airports}
+%\end{figure}
 
 \subsection{Price Data}
 Price data are scraped from \url{skyscanner.com} using Selenium in Python. Ideally we would have preferred historical prices matching the time horizon of Flight dataset, however we have not be able to find such data. Instead we are scraping prices for all the connections. Due to limited time we have chosen to scrape prices for one specific date. This is problematic since prices shows systematic changes across weekdays, and seasonality across the year. Furthermore, our connection data includes all flight within a year and some routes might not be operated at this particular date.
