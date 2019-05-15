@@ -35,3 +35,9 @@ We also have global connection data from OpenFlights. Connection data contains a
     \includegraphics[width=1. \textwidth]{Exam/Airports_WorldMap}
   \label{fig:airports}
 \end{figure}
+
+\subsection{Price Data}
+Price data are scraped from \url{skyscanner.com} using Selenium in Python. Ideally we would have preferred historical prices matching the time horizon of Flight dataset, however we have not be able to find such data. Instead we are scraping prices for all the connections. Due to limited time we have chosen to scrape prices for one specific date. This is problematic since prices shows systematic changes across weekdays, and seasonality across the year. Furthermore, our connection data includes all flight within a year and some routes might not be operated at this particular date.
+The scraper function launches a browser and opens the url for a given flight at our chosen date which is May 27th. If possible the price of the cheapest direct flight is chosen. The prices of flights operated by Southwest Airlines are not shown at Skyscanner. If their flight is only one operating, the price of the cheapest indirect flight is chosen. The cheapest indirect flight is also chosen if no carrier is operating at the date.
+
+
