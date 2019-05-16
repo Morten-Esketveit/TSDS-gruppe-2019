@@ -14,19 +14,29 @@ To get a further sense of how the network is connected we calculate the degree c
 The average degree for the 358 airports contained in the dataset is 18,0. This average masks a huge variation; the highest degree found in the dataset is the O'Hare International Airport (ORD) in Chigago with a degree of 176.  Conversely, 51 airports have a degree of 1, implying that in this dataset they only appear in connection with a single other airport. \\
 The degree distribution can be seen in the figure below. Clearly, a large number of airports are connected by flights to few other airports, while a minority of airports are much more connected. \\
 
-As an alternative measures of centrality in the network, we calculate \textit{betweenness centrality} that measures the degree to which an edge is part of the shortest path between two other edges where path length is defined as the number of traversed links. \\
-In the end, we use clustering coefficient, betweenness and degree as features in the prediction model. Note, that these are all node-specific measures, and as such, for each observation, there are two of each corresponding to origin and destination airport. 
-
-% Figur med hhv. degree distribution (til venstre) og betweenness centrality (højre)?
-The figure below shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network becomes clear. 
 \begin{figure}[H]
   \centering
   \caption{Domestic flights network, 2007}
     \includegraphics[width=1. \textwidth]{Exam/Figures/map_general_07}
-    \vskip{-1}
-    \notecenter{Size resembles the degree.}
+    \vspace{-0.7cm}
+    %\notecenter{Size resembles the degree.}
   \label{fig:map_general_07}
 \end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Domestic flights network, 2018}
+    \includegraphics[width=1. \textwidth]{Exam/Figures/map_general_07}
+    \vspace{-0.7cm}
+    %\notecenter{Size resembles the degree.}
+  \label{fig:map_general_07}
+\end{figure}
+
+As an alternative measures of centrality in the network, we calculate \textit{betweenness centrality} that measures the degree to which an edge is part of the shortest path between two other edges where path length is defined as the number of traversed links. \\
+In the end, we use clustering coefficient, betweenness and degree as features in the prediction model. Note, that these are all node-specific measures, and as such, for each observation, there are two of each corresponding to origin and destination airport. 
+
+% Figur med hhv. degree distribution (til venstre) og betweenness centrality (højre)?
+The figure below shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network becomes clear.
 
 The figure below shows the degree distribution of the network. The hub-and-spoke nature of the network - and the related fact that it is scale-free - is fairly apparent: A large number of nodes have a low degree, while a few nodes have a degree far above the average degree. 
 \begin{figure}[H]
