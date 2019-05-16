@@ -18,13 +18,22 @@ As an alternative measures of centrality in the network, we calculate \textit{be
 In the end, we use clustering coefficient, betweenness and degree as features in the prediction model. Note, that these are all node-specific measures, and as such, for each observation, there are two of each corresponding to origin and destination airport. 
 
 % Figur med hhv. degree distribution (til venstre) og betweenness centrality (højre)?
-
+The figure below shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network becomes clear. 
 \begin{figure}[H]
   \centering
   \caption{Domestic flights network, 2007}
     \includegraphics[width=1. \textwidth]{Exam/Figures/map_general}
   \label{fig:map_general}
 \end{figure}
+
+The figure below shows the degree distribution of the network. The hub-and-spoke nature of the network - and the related fact that it is scale-free - is fairly apparent: A large number of nodes have a low degree, while a few nodes have a degree far above the average degree. 
+\begin{figure}[H]
+  \centering
+  \caption{Degree distribution of network, 2018}
+    \includegraphics[width=0.6 \textwidth]{Exam/Figures/degreeDistribution.png}
+  \label{fig:degreeDistribution}
+\end{figure}
+Similar figures for betweenness centrality and clustering coefficient can be found in figure \ref{fig:Btwns_CC} in appendix \ref{app: Network characteristics}. 
 
 \subsection{Network vulnerability}
 We conduct an analysis of how the network is affected when certain nodes are removed. This analysis is, broadly, in line with the analysis in \cite{chi2004structural}. \\
@@ -44,4 +53,27 @@ As the figure shows, the removal of a relatively small number of hubs can dramat
 \subsection{Predicting Flight Prices - Do Network-related Features add Predictive Power?}
 Our set of network-related features includes, for both origin and destination airport: Betweenness centrality, degree and clustering coefficient. \\
 Our set of other features includes: The number of flights on the given route in the year considered, the distance between the two airports, the (average) time in minutes for the flight and the number of carriers who flew the route during the year considered. \\
+
+\begin{figure}[H]
+  \centering
+  \caption{Correlation plot, 2007}
+    \includegraphics[width=1. \textwidth]{Exam/Figures/corr_plot.pdf}
+  \label{fig:map_general}
+\end{figure}
 Our key question is then whether or not adding the network-related features contributes predictive power in predicting prices. 
+
+In order to predict prices we use a linear prediction model including network characteristics and distance as predictors.
+
+We write our prediction model as
+$$
+p_i = w_0 + W X_i 
+$$
+where $p_i$ is the price of a given flight, $w_0$ is the bias/intercept, $X_i$ is a vector of predictors, and $W$ is a vector of corresponding weights. 
+
+To find the weights that makes the most accurate predictions we need to define a cost function. The standard cost function estimating a linear model is the \textbf{Mean Squared Error (MSE)}:
+$$
+\text{MSE}=\frac{1}{N} \sum_i^N (y_i - (w_i + WX_i)^2
+$$
+However, we allow for a more flexible cost function called using estimation method called elastic net which incorporates both the LASSO and the RIDGE regularization in the objective function. 
+
+The best model is found using Cross Validated Grid Search from SKLEARN module in Python. We search for 
