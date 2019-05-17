@@ -12,8 +12,7 @@ This implies, that only approximately 5 pct. of possible edges are actually foun
 This sparseness of the network seems to support the hub-and-spoke nature of air transport; rather than having all airports be connected, it is more economically sensible to have certain airports function as hubs in their geographical area, and connect to hubs in other regional areas. \\ 
 To get a further sense of how the network is connected we calculate the degree centrality for each node in the network, that is the number of other airports each airport is connected to through flights in 2018. \\
 The average degree for the 358 airports contained in the dataset is 18,0. This average masks a huge variation; the highest degree found in the dataset is the O'Hare International Airport (ORD) in Chigago with a degree of 176.  Conversely, 51 airports have a degree of 1, implying that in this dataset they only appear in connection with a single other airport. \\
-The degree distribution can be seen in the figure below. Clearly, a large number of airports are connected by flights to few other airports, while a minority of airports are much more connected. \\
-
+The degree distribution can be seen in the figure below. Clearly, a large number of airports are connected by flights to few other airports, while a minority of airports are much more connected.
 \begin{figure}[H]
   \centering
   \caption{Domestic flights network, 2007}
@@ -22,16 +21,14 @@ The degree distribution can be seen in the figure below. Clearly, a large number
     %\notecenter{Size resembles the degree.}
   \label{fig:map_general_07}
 \end{figure}
-
 \begin{figure}[H]
   \centering
   \caption{Domestic flights network, 2018}
-    \includegraphics[width=1. \textwidth]{Exam/Figures/map_general_07}
+    \includegraphics[width=1. \textwidth]{Exam/Figures/map_general_18}
     \vspace{-0.7cm}
     %\notecenter{Size resembles the degree.}
-  \label{fig:map_general_07}
+  \label{fig:map_general_18}
 \end{figure}
-
 As an alternative measures of centrality in the network, we calculate \textit{betweenness centrality} that measures the degree to which an edge is part of the shortest path between two other edges where path length is defined as the number of traversed links. \\
 In the end, we use clustering coefficient, betweenness and degree as features in the prediction model. Note, that these are all node-specific measures, and as such, for each observation, there are two of each corresponding to origin and destination airport. 
 
