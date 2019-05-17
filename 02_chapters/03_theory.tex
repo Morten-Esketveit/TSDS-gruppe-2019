@@ -82,10 +82,10 @@ The average degree is then simply the average across nodes. Average degree is ca
 The clustering coefficient for a given node \textit{i} is given as: 
 \begin{align}
     C_i = \frac{2L_i}{k_i(k_i-1)}
-    \intertext{The clustering coefficient of the network is then given by:}
+    \intertext{Where $L_i$ denotes the number of links between node \textit{i}'s neighbors. The clustering coefficient of the network is then given by:}
     C = \frac{1}{N} \sum^N_{i=1} C_i
 \end{align}
-The clustering coefficient for a single node is equal to the fraction of possible edges between node \textit{i}'s neighbors (nodes it is connected to) that are found in the network. 
+The clustering coefficient for a single node is equal to the fraction of possible edges between node \textit{i}'s neighbors (nodes it is connected to) that are found in the network. A node whose neighbors are all connected to each other will have a clustering coefficient of 1. Conversely, if none of the nodes neighbors are connected, it will have a clustering coefficient of 0. Note, that for nodes with degree 1, the clustering coefficient is 0. 
 \medskip
 \textbf{Average Shortest Path Length} \\
 The average shortest path length is defined as: 
