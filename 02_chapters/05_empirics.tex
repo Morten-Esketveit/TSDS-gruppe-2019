@@ -26,7 +26,7 @@ As an alternative measures of centrality in the network, we calculate \textit{be
 In the end, we use clustering coefficient, betweenness and degree as features in the prediction model. Note, that these are all node-specific measures, and as such, for each observation, there are two of each corresponding to origin and destination airport. 
 
 % Figur med hhv. degree distribution (til venstre) og betweenness centrality (højre)?
-Figure \ref{fig:map_general_18} shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network is clear. Hubs are somewhat distributed geographically and - at a glance - seem to be placed near population centres. A similar map of the network in 2007 can be found in \ref{fig:map_general_07} in appendix \ref{app: Network characteristics}. The network seems to have been relatively stable over time; airports that were well connected in 2007 are still well connected in 2018. Table \ref{tab: temporal} shows key characteristics of the network in 1998, 2007 and 2018. The number of airports has risen substantially in the period, as has the number of unique flight routes. The average degree of the network rose from 1998 to 2007, but fell slightly from 2007 to 2018. For 1997, 
+Figure \ref{fig:map_general_18} shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network is clear. Hubs are somewhat distributed geographically and - at a glance - seem to be placed near population centres. A similar map of the network in 2007 can be found in \ref{fig:map_general_07} in appendix \ref{app: Network characteristics}. The network seems to have been relatively stable over time; airports that were well connected in 2007 are still well connected in 2018. Table \ref{tab: temporal} shows key characteristics of the network in 1998, 2007 and 2018. The number of airports has risen substantially in the period, as has the number of unique flight routes. The average degree of the network rose from 1998 to 2007, but fell slightly from 2007 to 2018. 
 \begin{table}[H]
 \centering 
 \label{tab: temporal}
@@ -69,15 +69,14 @@ As the figure shows, the removal of a relatively small number of hubs can dramat
 \subsection{Predicting Flight Prices - Do Network-related Features add Predictive Power?}
 We want to assess whether network characteristics can contribute in predicting flight prices compared to a prediction model using only a set of baseline variables. Our set of baseline variables include: The number of flights on the given route in the year considered, the distance between the two airports, the (average) time in minutes for the flight and the number of carriers who flew the route during the year considered. Our set of network-related features includes, for both origin and destination airport: Betweenness centrality, degree and clustering coefficient. \\
 
-In order to get a sense of correlation structure, we show all the continuous variables in the correlation plot in figure \ref{fig:correl}. Unsurprisingly, we see that prices are positively correlated with distance and flight duration and negatively with the number of flights on the route. We see that the rest of the variables, including all our network variables, are only weakly correlated with prices. It is further seen that some of the features exhibits more or less multicolinearity.
+In order to get a sense of correlation structure, we show all the continuous variables in the correlation plot in figure \ref{fig:correl}. Unsurprisingly, we see that prices are positively correlated with distance and flight duration and negatively with the number of flights on the route. We see that the rest of the variables, including all our network variables, are only weakly correlated with prices. It is further seen that some of the features exhibits multicolinearity to some degree.
 
 \begin{figure}[H]
   \centering
-  \caption{Correlation plot, 2007}
+  \caption{Correlation Plot}
     \includegraphics[width=1. \textwidth]{Exam/Figures/corr_plot.pdf}
   \label{fig:correl}
 \end{figure}
-
 
 In order to predict prices we use a linear prediction model including network characteristics and distance as predictors.
 We write our prediction model as
@@ -92,14 +91,21 @@ $$
 $$
 To address the problem of overfitting, we regularize the model using elastic net, which combines L1 ("Lasso") and L2 ("Ridge") regularization. Each of these regularization methods work by adding a term to the cost function. In the case of Lasso, the cost function then becomes: 
 \begin{align}
-    J(w) = \sum^N_{i=1} (y_i-\hat{y}_i)^2 + \lambda \cdot \sum_{j=1}^N |w_j|
-    \intertext{The hyper-parameter $\lambda$ then controls the strength of the regularization. In the case of Ridge regularization, the cost function becomes:}
-     J(w) = \sum^N_{i=1} (y_i-\hat{y}_i)^2 + \lambda \cdot \sum_{j=1}^N w_j^2
+    J(w) = \sum^N_{i=1} (y_i-\hat{y}_i)^2 + \alpha \cdot \sum_{j=1}^N |w_j|
+    \intertext{The hyper-parameter $\alpha$ then controls the strength of the regularization. In the case of Ridge regularization, the cost function becomes:}
+     J(w) = \sum^N_{i=1} (y_i-\hat{y}_i)^2 + \alpha \cdot \sum_{j=1}^N w_j^2
 \end{align}
 Ridge regularization shrinks the weights in the model. Lasso on the other hand tends to drive some coefficients to zero. \\
 Elastic net combines the two regularization methods, and adds an additional hyper-parameter, the L1-ratio, that determines the relative importance of Ridge- and Lasso regularization. \\ 
-When evaluating the generalization performance of our model, we first split our dataset into a training set and a test set. When performing model selection - that is, choosing the optimal hyperparameters - we use k-fold cross-validation. K-fold cross-validation randomly splits the training data into k folds, and then uses k-1 folds to train the model, and evaluates performance on the last fold. This procedure is then repeated k times, so that we obtain k models and performance results. This k-fold cross-validation is done for each (set of) hyperparameter(s). This process is called grid-search, and we allow the L1-ratio to vary between 0.1 and 1, and the alpha parameter to vary between 1 and 1000. \\ % Læs ovenstående igennem.
-Prior to fitting the model, we scale the features using the StandardScaler in Python. \\
+When evaluating the generalization performance of our model, we first split our dataset into a training set and a test set. When performing model selection - that is, choosing the optimal hyperparameters - we use k-fold cross-validation. K-fold cross-validation randomly splits the training data into k folds, and then uses k-1 folds to train the model, and evaluates performance on the last fold. This procedure is then repeated k times, so that we obtain k models and performance results. This k-fold cross-validation is done for each (set of) hyperparameter(s). This process is called grid-search, and we allow the L1-ratio to vary between 0.1 and 1, and the alpha parameter to vary between 1 and 1000. Figure \ref{fig:validation curve} plots the score, measured in terms of $R^2$ as a function of the regularization parameter $\alpha$. Using grid search the optimal $\alpha$ is found around  \\ % Læs ovenstående igennem.
+\begin{figure}[H]
+  \centering
+  \caption{Validation Curve}
+    \includegraphics[width=1. \textwidth]{Exam/Figures/validation_curve.pdf}
+  \label{fig:validation curve}
+\end{figure}
+
+Prior to fitting the model, we scale the features using the StandardScaler in Python. This is done in order to avoid artificially large/small weights which could make convergence difficult using regularization.  \\
 
 We find, that adding network characteristics does improve the predictive power of the model, although relatively marginally. \\ 
 
@@ -111,18 +117,12 @@ We find, that adding network characteristics does improve the predictive power o
     \hline
           &       & \multicolumn{2}{c}{\textbf{Baseline}} & \multicolumn{2}{c}{\textbf{Networks}} \\ 
           &       & \multicolumn{1}{l}{Test data} & \multicolumn{1}{l}{Training data} & \multicolumn{1}{l}{Test data} & \multicolumn{1}{l}{Training data} \\ \hline
-    \multicolumn{1}{l}{Model evaluation} & $R^2$  & \multicolumn{1}{r}{0.411} & \multicolumn{1}{r}{0.430} & \multicolumn{1}{r}{0.413} & \multicolumn{1}{r}{0.433} \\
-          &       & \multicolumn{1}{r}{0.030} &       &       & \multicolumn{1}{r}{(0.030)} \\
-    \multicolumn{1}{l}{Hyper parameters} & Alpha & \multicolumn{2}{c}{4.642} & \multicolumn{2}{c}{4.642} \\
+    \multicolumn{1}{l}{Model evaluation} & $R^2$  & \multicolumn{1}{r}{0.411} & \multicolumn{1}{r}{0.432} & \multicolumn{1}{r}{0.414} & \multicolumn{1}{r}{0.434} \\
+          &       &  &  \multicolumn{1}{r}{(0.029)}     &       & \multicolumn{1}{r}{(0.029)} \\
+    \multicolumn{1}{l}{Hyper parameters} & $\alpha$ & \multicolumn{2}{c}{6.684} & \multicolumn{2}{c}{6.211} \\
           & l1 ratio & \multicolumn{2}{c}{1} & \multicolumn{2}{c}{1} \\ \hline
     \end{tabular}%
   \label{tab:addlabel}%
 \end{table}%
 
 
-\begin{figure}[H]
-  \centering
-  \caption{Correlation plot, 2007}
-    \includegraphics[width=1. \textwidth]{Exam/Figures/validation_curve.pdf}
-  \label{fig:map_general}
-\end{figure}
