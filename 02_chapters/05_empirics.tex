@@ -26,8 +26,22 @@ As an alternative measures of centrality in the network, we calculate \textit{be
 In the end, we use clustering coefficient, betweenness and degree as features in the prediction model. Note, that these are all node-specific measures, and as such, for each observation, there are two of each corresponding to origin and destination airport. 
 
 % Figur med hhv. degree distribution (til venstre) og betweenness centrality (højre)?
-Figure \ref{fig:map_general_18} shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network is clear. Hubs are somewhat distributed geographically and - at a glance - seem to be placed near population centres. A similar map of the network in 2007 can be found in \ref{fig:map_general_07} in appendix \ref{app: Network characteristics}. The network seems to have been relatively stable over time; airports that were well connected in 2007 are still well connected in 2018. 
-
+Figure \ref{fig:map_general_18} shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network is clear. Hubs are somewhat distributed geographically and - at a glance - seem to be placed near population centres. A similar map of the network in 2007 can be found in \ref{fig:map_general_07} in appendix \ref{app: Network characteristics}. The network seems to have been relatively stable over time; airports that were well connected in 2007 are still well connected in 2018. Table \ref{tab: temporal} shows key characteristics of the network in 1998, 2007 and 2018. The number of airports has risen substantially in the period, as has the number of unique flight routes. The average degree of the network rose from 1998 to 2007, but fell slightly from 2007 to 2018. For 1997, 
+\begin{table}[H]
+\centering 
+\label{tab: temporal}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{}                    & \textbf{1998} & \textbf{2007} & \textbf{2018} \\ \hline
+Nodes                        & 209           & 310           & 358           \\
+Edges                        & 1614          & 2868          & 3220          \\
+Average degree               & 15.45         & 18.50         & 18.0          \\
+Average shortest path length & -             & 2.31          & 2.38          \\ 
+Diameter                     & -             & 5             & 6 
+     \\
+Clustering Coefficient       & 0.63          & 0.63          & 0.57          \\ \hline
+\end{tabular}
+\end{table}
 Figure \ref{fig:degreeDistribution} shows the degree distribution of the network. The hub-and-spoke nature of the network - and the related fact that it is scale-free - is fairly apparent: A large number of nodes have a low degree, while a few nodes have a degree far above the average degree. 
 \begin{figure}[H]
   \centering
@@ -53,15 +67,15 @@ It should be noted, that in this section we analyze the network as it is in our 
 As the figure shows, the removal of a relatively small number of hubs can dramatically alter network characteristics. Unsurprisingly, removal of the least important nodes increases the measures. The network is thus somewhat vulnerable to 'attacks' on the most connected airports. \\ In the figure, we also show the effect of removing random nodes. Note, that each point represents a "new" network of randomly chosen nodes in the original network. Nodes left out in the first observation may therefore be present in the second observation.  Removal of random nodes has relatively little effect on average degree or the clustering coefficient of the network, again pointing to the fact that the network is vulnerable only to a concerted attack on important hubs. \\ 
 
 \subsection{Predicting Flight Prices - Do Network-related Features add Predictive Power?}
-Our set of network-related features includes, for both origin and destination airport: Betweenness centrality, degree and clustering coefficient. \\
-Our set of other features includes: The number of flights on the given route in the year considered, the distance between the two airports, the (average) time in minutes for the flight and the number of carriers who flew the route during the year considered. \\
-Our key question is then whether or not adding the network-related features contributes predictive power in predicting prices. 
+We want to assess whether network characteristics can contribute in predicting flight prices compared to a prediction model using only a set of baseline variables. Our set of baseline variables include: The number of flights on the given route in the year considered, the distance between the two airports, the (average) time in minutes for the flight and the number of carriers who flew the route during the year considered. Our set of network-related features includes, for both origin and destination airport: Betweenness centrality, degree and clustering coefficient. \\
+
+In order to get a sense of correlation structure, we show all the continuous variables in the correlation plot in figure \ref{fig:correl}. Unsurprisingly, we see that prices are positively correlated with distance and flight duration and negatively with the number of flights on the route. We see that the rest of the variables, including all our network variables, are only weakly correlated with prices. It is further seen that some of the features exhibits more or less multicolinearity.
 
 \begin{figure}[H]
   \centering
   \caption{Correlation plot, 2007}
     \includegraphics[width=1. \textwidth]{Exam/Figures/corr_plot.pdf}
-  \label{fig:map_general}
+  \label{fig:correl}
 \end{figure}
 
 
@@ -74,7 +88,7 @@ where $p_i$ is the price of a given flight, $w_0$ is the bias/intercept, $X_i$ i
 
 To find the weights that makes the most accurate predictions we need to define a cost function. The standard cost function estimating a linear model is the \textbf{Mean Squared Error (MSE)}:
 $$
-\text{MSE}=\frac{1}{N} \sum_i^N (y_i - (w_i + WX_i))^2
+\text{MSE}=\frac{1}{N} \sum_i^N (y_i - (w_0 + WX_i))^2
 $$
 To address the problem of overfitting, we regularize the model using elastic net, which combines L1 ("Lasso") and L2 ("Ridge") regularization. Each of these regularization methods work by adding a term to the cost function. In the case of Lasso, the cost function then becomes: 
 \begin{align}
@@ -97,8 +111,8 @@ We find, that adding network characteristics does improve the predictive power o
     \hline
           &       & \multicolumn{2}{c}{\textbf{Baseline}} & \multicolumn{2}{c}{\textbf{Networks}} \\ 
           &       & \multicolumn{1}{l}{Test data} & \multicolumn{1}{l}{Training data} & \multicolumn{1}{l}{Test data} & \multicolumn{1}{l}{Training data} \\ \hline
-    \multicolumn{1}{l}{Model evaluation} & $R^2$  & \multicolumn{1}{r}{0.408} & \multicolumn{1}{r}{0.426} & \multicolumn{1}{r}{0.413} & \multicolumn{1}{r}{0.429} \\
-          &       & \multicolumn{1}{r}{-0.032} &       &       & \multicolumn{1}{r}{(0.032)} \\
+    \multicolumn{1}{l}{Model evaluation} & $R^2$  & \multicolumn{1}{r}{0.411} & \multicolumn{1}{r}{0.430} & \multicolumn{1}{r}{0.413} & \multicolumn{1}{r}{0.433} \\
+          &       & \multicolumn{1}{r}{0.030} &       &       & \multicolumn{1}{r}{(0.030)} \\
     \multicolumn{1}{l}{Hyper parameters} & Alpha & \multicolumn{2}{c}{4.642} & \multicolumn{2}{c}{4.642} \\
           & l1 ratio & \multicolumn{2}{c}{1} & \multicolumn{2}{c}{1} \\ \hline
     \end{tabular}%
@@ -109,6 +123,6 @@ We find, that adding network characteristics does improve the predictive power o
 \begin{figure}[H]
   \centering
   \caption{Correlation plot, 2007}
-    \includegraphics[width=1. \textwidth]{Exam/Figures/}
+    \includegraphics[width=1. \textwidth]{Exam/Figures/validation_curve.pdf}
   \label{fig:map_general}
 \end{figure}
