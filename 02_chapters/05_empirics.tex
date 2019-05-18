@@ -29,6 +29,7 @@ In the end, we use clustering coefficient, betweenness and degree as features in
 Figure \ref{fig:map_general_18} shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network is clear. Hubs are somewhat distributed geographically and - at a glance - seem to be placed near population centres. A similar map of the network in 2007 can be found in \ref{fig:map_general_07} in appendix \ref{app: Network characteristics}. The network seems to have been relatively stable over time; airports that were well connected in 2007 are still well connected in 2018. Table \ref{tab: temporal} shows key characteristics of the network in 1998, 2007 and 2018. The number of airports has risen substantially in the period, as has the number of unique flight routes. The average degree of the network rose from 1998 to 2007, but fell slightly from 2007 to 2018. 
 \begin{table}[H]
 \centering 
+\caption{Network Characteristics, 1998-2018}
 \label{tab: temporal}
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -78,49 +79,48 @@ In order to get a sense of correlation structure, we show all the continuous var
   \label{fig:correl}
 \end{figure}
 
-In order to predict prices we use a linear prediction model including network characteristics and distance as predictors.
+In order to predict prices we use a linear prediction model including network characteristics and other things such as distance, flight duration, and airport dummies as predictors.
 We write our prediction model as
 $$
-p_i = w_0 + W X_i 
+y_i = w_0 + W X_i 
 $$
-where $p_i$ is the price of a given flight, $w_0$ is the bias/intercept, $X_i$ is a vector of predictors, and $W$ is a vector of corresponding weights. 
+where $y_i$ is the price of a given flight, $w_0$ is the bias/intercept, $X_i$ is a vector of features, and $W$ is a vector of corresponding weights. 
 
 To find the weights that makes the most accurate predictions we need to define a cost function. The standard cost function estimating a linear model is the \textbf{Mean Squared Error (MSE)}:
-$$
+\begin{align}
 \text{MSE}=\frac{1}{N} \sum_i^N (y_i - (w_0 + WX_i))^2
-$$
+\end{align}
 To address the problem of overfitting, we regularize the model using elastic net, which combines L1 ("Lasso") and L2 ("Ridge") regularization. Each of these regularization methods work by adding a term to the cost function. In the case of Lasso, the cost function then becomes: 
 \begin{align}
-    J(w) = \sum^N_{i=1} (y_i-\hat{y}_i)^2 + \alpha \cdot \sum_{j=1}^N |w_j|
-    \intertext{The hyper-parameter $\alpha$ then controls the strength of the regularization. In the case of Ridge regularization, the cost function becomes:}
-     J(w) = \sum^N_{i=1} (y_i-\hat{y}_i)^2 + \alpha \cdot \sum_{j=1}^N w_j^2
+    J(w) = \sum^N_{i=1} (y_i-\hat{y}_i)^2 + \alpha \cdot \sum_{j=1}^p |w_j|
+    \intertext{where $p$ is the number of features in the model. The hyper-parameter $\alpha$ then controls the strength of the regularization. In the case of Ridge regularization, the cost function becomes:}
+     J(w) = \sum^N_{i=1} (y_i-\hat{y}_i)^2 + \alpha \cdot \sum_{j=1}^p w_j^2
 \end{align}
 Ridge regularization shrinks the weights in the model. Lasso on the other hand tends to drive some coefficients to zero. \\
 Elastic net combines the two regularization methods, and adds an additional hyper-parameter, the L1-ratio, that determines the relative importance of Ridge- and Lasso regularization. \\ 
-When evaluating the generalization performance of our model, we first split our dataset into a training set and a test set. When performing model selection - that is, choosing the optimal hyperparameters - we use k-fold cross-validation. K-fold cross-validation randomly splits the training data into k folds, and then uses k-1 folds to train the model, and evaluates performance on the last fold. This procedure is then repeated k times, so that we obtain k models and performance results. This k-fold cross-validation is done for each (set of) hyperparameter(s). This process is called grid-search, and we allow the L1-ratio to vary between 0.1 and 1, and the alpha parameter to vary between 1 and 1000. Figure \ref{fig:validation curve} plots the score, measured in terms of $R^2$ as a function of the regularization parameter $\alpha$. Using grid search the optimal $\alpha$ is found around  \\ % Læs ovenstående igennem.
+When evaluating the generalization performance of our model, we first split our dataset into a training set and a test set. When performing model selection - that is, choosing the optimal hyperparameters - we use k-fold cross-validation. K-fold cross-validation randomly splits the training data into k folds, and then uses k-1 folds to train the model, and evaluates performance on the last fold. This procedure is then repeated k times, so that we obtain k models and performance results. This k-fold cross-validation is done for each (set of) hyperparameter(s). This process is called grid-search, and we allow the L1-ratio to vary between 0.25 and 1, and the alpha parameter to vary between 1 and 20.\footnote{Prior to fitting the model, we scale the features using the StandardScaler in Python. This is done in order to avoid artificially large/small weights which could make convergence difficult when we are using regularization.} 
+Figure \ref{fig:validation curve} plots the score, measured in terms of $R^2$ as a function of the regularization parameter $\alpha$ for the three highest L1 ratios. Using grid search the optimal $\alpha$ is approximately 6.2 whereas the optimal L1 ratio is 1. \\ % Læs ovenstående igennem.
 \begin{figure}[H]
   \centering
   \caption{Validation Curve}
     \includegraphics[width=1. \textwidth]{Exam/Figures/validation_curve.pdf}
   \label{fig:validation curve}
 \end{figure}
-
-Prior to fitting the model, we scale the features using the StandardScaler in Python. This is done in order to avoid artificially large/small weights which could make convergence difficult using regularization.  \\
-
-We find, that adding network characteristics does improve the predictive power of the model, although relatively marginally. \\ 
+Finally, the best model is tested on our test data and the results are compared to the corresponding model without network features. The results are summarized in table \ref{tab: model1}. Our model is able to explain around 40 pct. of the variation in flight prices. We find, that adding network characteristics only increase the out-of-sample prediction marginally, ie. by 0.3 percentage point. Both weights of the baseline features (not shown) and the hyperparametrization of the two models are also almost identical. Among the network variables \textit{betweenness of origin airport} and \textit{clustering coefficient of origin airport} enters the model with the largest weights.   \\ 
 
 
 \begin{table}[htbp]
+\label{tab: model1}
   \centering
   \caption{Results, Prediction Model}
     \begin{tabular}{rlcccc}
     \hline
           &       & \multicolumn{2}{c}{\textbf{Baseline}} & \multicolumn{2}{c}{\textbf{Networks}} \\ 
           &       & \multicolumn{1}{l}{Test data} & \multicolumn{1}{l}{Training data} & \multicolumn{1}{l}{Test data} & \multicolumn{1}{l}{Training data} \\ \hline
-    \multicolumn{1}{l}{Model evaluation} & $R^2$  & \multicolumn{1}{r}{0.411} & \multicolumn{1}{r}{0.432} & \multicolumn{1}{r}{0.414} & \multicolumn{1}{r}{0.434} \\
-          &       &  &  \multicolumn{1}{r}{(0.029)}     &       & \multicolumn{1}{r}{(0.029)} \\
-    \multicolumn{1}{l}{Hyper parameters} & $\alpha$ & \multicolumn{2}{c}{6.684} & \multicolumn{2}{c}{6.211} \\
-          & l1 ratio & \multicolumn{2}{c}{1} & \multicolumn{2}{c}{1} \\ \hline
+    \multicolumn{1}{l}{Model evaluation} & $R^2$  & \multicolumn{1}{c}{0.411} & \multicolumn{1}{c}{0.432} & \multicolumn{1}{c}{0.414} & \multicolumn{1}{c}{0.434} \\
+          &       &  &  \multicolumn{1}{c}{(0.029)}     &       & \multicolumn{1}{c}{(0.029)} \\
+    \multicolumn{1}{l}{Hyper parameters} & $\alpha$ & \multicolumn{2}{c}{6.359} & \multicolumn{2}{c}{6.359} \\
+          & L1 ratio & \multicolumn{2}{c}{1} & \multicolumn{2}{c}{1} \\ \hline
     \end{tabular}%
   \label{tab:addlabel}%
 \end{table}%
