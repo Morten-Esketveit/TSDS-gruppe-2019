@@ -2,12 +2,11 @@
 % Main characteristics of the data set: source, type of data
 % Description of variables used for the	analysis and correspondence with the (ideal) magnitudes in the empirical specification
 % Descriptive statistics of the	main variables in the analysis
-Data for the analysis comes from a variety of sources.
-In general, we have three types of data:
+The data used in the analysis is comprised of data from multiple sources. We utilize three 'types' of data:
 \begin{itemize}
-    \item Airports. Data on airports. In the network setting, these correspond to nodes in the network.
-    \item Flights/connections. These datasets contain information on flights or connections between airports. As will be described in detail below, we have access to a rich dataset on US flights, and a somewhat less extensive dataset on global connections. In the network setting, this information corresponds to links in the network.
-    \item Prices. Prices are generally harder to obtain in ready-to-use datasets. For this reason, we choose to scrape web-data on prices from \textit{Skyscanner}.
+    \item Data on airports. In the network setting, these correspond to nodes in the network. 
+    \item Data on flights. These dataset contain information on flights between airports. As will be described in detail below, we have access to a rich dataset on US flights. In the network setting, this information corresponds to links in the network.
+    \item Prices. Data on prices is generally harder to obtain. For this reason, we have chosen to scrape web-data on prices from \textit{Skyscanner}.
 \end{itemize}
 
 \subsection{Airport Data}
@@ -20,8 +19,8 @@ Data on airports comes from OpenFlights.\footnote{Available at: \url{https://ope
 
 \subsection{Flights Data}
 \label{subsec:Flight_Data}
-Flight data comes from the Bureau of Transportation Statistics \footnote{\url{https://www.transtats.bts.gov/Fields.asp?table_id=236}}. The dataset covers all scheduled fligths by carriers (airlines) that account for at least one percent of domestic scheduled passenger revenues. We have flight data for 2007 and 2018. Each of the two datasets include information on more than 7 million commercial flights within the US. For each flight, we have a range of information, including the aircraft carrier, origin and destination (IATA coded), distance travelled, time in air date etc. Flight data can be merged with airport data using the IATA codes on airports. \medskip\\
-We only use the 2007 data to assess how the network has changed from 2007 to 2018. 
+Flight data comes from the Bureau of Transportation Statistics (\citet{BTS}). The dataset covers all scheduled fligths by carriers (airlines) that account for at least one percent of domestic scheduled passenger revenues. We have flight data for 1998, 2007 and 2018. Each of the datasets include information on several million commercial flights within the US. For each flight, we have a range of information, including the aircraft carrier, origin and destination (IATA coded), distance travelled, time in air date etc. Flight data can be merged with airport data using the IATA codes on airports. \medskip\\
+We only use the 1998 and 2007 data to assess how the network has changed over time.
 
 %% Update: Flights data fra bts.gov og fra stat-comp (men det er igen fra bts.gov).
 % Airports data: Bruger kun OpenFlights datasættet. 
@@ -41,11 +40,11 @@ We only use the 2007 data to assess how the network has changed from 2007 to 201
 %\end{figure}
 
 \subsection{Price Data}
-We scrape the price data from \url{skyscanner.com}. The scraper function launches a browser and opens the url for a given flight at our chosen date which is May 27th. If possible the price of the cheapest direct flight is chosen. The prices of flights operated by Southwest Airlines are not shown at Skyscanner. If their flight is the only one operating, the price of the cheapest indirect flight is chosen. The cheapest indirect flight is also chosen if no carrier is operating at the date. For routes where we could not find a price this date, the script is rerun for the next day, the 28th. In order to reduce the number of searches without result and thereby reduce time, we only choose routes with an average of more than one flight per week.
+We scrape the price data from \url{skyscanner.com} using the \texttt{Selenium} module in Python. The scraper function launches a browser and opens the URL for a given flight at our chosen date which is May 27th. If possible the price of the cheapest direct flight is chosen. The prices of flights operated by Southwest Airlines are not shown at Skyscanner. If their flight is the only one operating, the price of the cheapest indirect flight is chosen. The cheapest indirect flight is also chosen if no carrier is operating at the date. For routes where we could not find a price this date, the script is rerun for the next day, the 28th. In order to reduce the number of searches without result and thereby reduce time, we only choose routes with an average of more than one flight per week.\footnote{See github for documentation, \url{https://github.com/Morten-Esketveit/TSDS-gruppe-2019/tree/master/Exam}.}
 
-There is a number of limitation to our approach. First, in order to reduce the scraping time, we are scraping prices for only 1 day. This implies that routes not operated on this particular monday (and tuesday) are not in the data set. Furthermore choosing one specific date is problematic since prices shows systematic changes across weekdays, and seasonality across the year. This approach is likely not to give an accurate measure since our network characteristic are calculated on the basis of the whole year. 
+There is a number of limitations to our approach. First, in order to reduce the scraping time, we are scraping prices for only 1 day. This implies that routes not operated on this particular Monday (and Tuesday) are not in the data set. Furthermore choosing one specific date is problematic since prices shows systematic changes across weekdays, and seasonality across the year. This approach is likely not to give an accurate measure since our network characteristic are calculated on the basis of the whole year. 
 
-The price dataset consist of prices for 5.341 of the total 6.425 routes. There is a number routes that turn out to have extremely high prices. This is because these routes are operated by some sort of air taxi company. Modelling these prices is beyond the scope of this paper and therefore we remove them from the dataset. The final dataset consists of 5.137 observations.
+The price dataset consist of prices for 5.283 of the total 6.425 routes. There is a number routes that turn out to have extremely high prices. This is because these routes are operated by some sort of air taxi company. Modelling these prices is beyond the scope of this paper and therefore we remove them from the dataset. The final dataset consists of 5.083 observations.
 
 
 
