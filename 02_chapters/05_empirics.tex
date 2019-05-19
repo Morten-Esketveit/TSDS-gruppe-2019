@@ -9,7 +9,7 @@ We start by characterizing the network. Recall, that we view airports as nodes, 
 \end{align}
 This implies, that only approximately 5 pct. of possible edges are actually found in the network. 
 % Tjek nedenstående når vi ved mere
-This sparseness of the network seems to support the hub-and-spoke nature of air transport; rather than having all airports be connected, it is more economically sensible to have certain airports function as hubs in their geographical area, and connect to hubs in other regional areas. \\ 
+This sparseness of the network supports the hub-and-spoke view of air transport; rather than having all airports be connected, it is more economically sensible to have certain airports function as hubs in their geographical area, and connect to hubs in other regional areas. \\ 
 To get a further sense of how the network is connected we calculate the degree centrality for each node in the network, that is the number of other airports each airport is connected to through flights in 2018. \\
 The average degree for the 358 airports contained in the dataset is 18,0. This average masks a huge variation; the highest degree found in the dataset is the O'Hare International Airport (ORD) in Chigago with a degree of 176.  Conversely, 51 airports have a degree of 1, implying that in this dataset they only appear in connection with a single other airport. \\
 The degree distribution can be seen in the figure below. Clearly, a large number of airports are connected by flights to few other airports, while a minority of airports are much more connected.
@@ -102,7 +102,7 @@ When evaluating the generalization performance of our model, we first split our 
 Figure \ref{fig:validation curve} plots the score, measured in terms of $R^2$ as a function of the regularization parameter $\alpha$ for the three highest L1 ratios. Using grid search the optimal $\alpha$ is approximately 6.2 whereas the optimal L1 ratio is 1. \\ % Læs ovenstående igennem.
 \begin{figure}[H]
   \centering
-  \caption{Validation Curve}
+  \caption{Validation Curves}
     \includegraphics[width=1. \textwidth]{Exam/Figures/validation_curve.pdf}
   \label{fig:validation curve}
 \end{figure}
