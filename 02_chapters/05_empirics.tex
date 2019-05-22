@@ -10,7 +10,7 @@ When analyzing the network we utilize the \texttt{NetworkX} package in Python. W
 This implies, that only approximately 5 pct. of possible edges are actually found in the network. 
 % Tjek nedenstående når vi ved mere
 This sparseness of the network supports the hub-and-spoke view of air transport; rather than having all airports be connected, it is more economically sensible to have certain airports function as hubs in their geographical area, and connect to hubs in other regional areas. \\ 
-To get a further sense of how the network is connected we calculate the degree centrality for each node in the network, that is the number of other airports each airport is connected to through flights in 2018. \\
+To get a further sense of how the network is connected we calculate the degree centrality for each node in the network, i.e. the number of other airports each airport is connected to through flights in 2018. \\
 The average degree for the 358 airports contained in the dataset is 18,0. This average masks a huge variation; the highest degree found in the dataset is the O'Hare International Airport (ORD) in Chigago with a degree of 176.  Conversely, 51 airports have a degree of 1, implying that in this dataset they only appear in connection with a single other airport. \\
 The degree distribution can be seen in the figure below. Clearly, a large number of airports are connected by flights to few other airports, while a minority of airports are much more connected.
 
@@ -65,12 +65,13 @@ It should be noted, that in this section we analyze the network as it is in our 
     \includegraphics[width=1. \textwidth]{Exam/Figures/attacksanderrors.png}
   \label{fig:attacks_and_errors}
 \end{figure}
+
 As the figure shows, the removal of a relatively small number of hubs can dramatically alter network characteristics. Unsurprisingly, removal of the least important nodes increases the measures. The network is thus somewhat vulnerable to 'attacks' on the most connected airports. \\ In the figure, we also show the effect of removing random nodes. Note, that each point represents a "new" network of randomly chosen nodes in the original network. Nodes left out in the first observation may therefore be present in the second observation.  Removal of random nodes has relatively little effect on average degree or the clustering coefficient of the network, again pointing to the fact that the network is vulnerable only to a concerted attack on important hubs. \\ 
 
 \subsection{Predicting Flight Prices - Do Network-related Features add Predictive Power?}
 We want to assess whether network characteristics can contribute in predicting flight prices compared to a prediction model using only a set of baseline variables. Our set of baseline variables include: The number of flights on the given route in the year considered, the distance between the two airports, the (average) time in minutes for the flight and the number of carriers who flew the route during the year considered as well as dummies for origin and destination airports. Our set of network-related features includes, for both origin and destination airport: Betweenness centrality, degree and clustering coefficient. \\
 
-In order to get a sense of correlation structure, we show all the continuous variables in the correlation plot in figure \ref{fig:correl}. Unsurprisingly, we see that prices are positively correlated with distance and flight duration and negatively with the number of flights on the route. We see that the rest of the variables, including all our network variables, are only weakly correlated with prices. It is further seen that some of the features exhibits multicollinearity to some degree.
+In order to get a sense of correlation structure, we show all the continuous variables in the correlation plot in figure \ref{fig:correl}. Unsurprisingly, we see that prices are positively correlated with distance and flight duration and negatively with the number of flights on the route. We see that the rest of the variables, including all our network variables, are only weakly correlated with prices. It is further seen that some of the features exhibit multicollinearity to some degree.
 
 \begin{figure}[H]
   \centering
@@ -89,9 +90,9 @@ Figure \ref{fig:validation curve} plots the score, measured in terms of $R^2$ as
     \includegraphics[width=1. \textwidth]{Exam/Figures/validation_curve.pdf}
   \label{fig:validation curve}
 \end{figure}
-Finally, the best model is tested on our test data and the results are compared to the corresponding model without network features. The results are summarized in table \ref{tab: model1}. Our model is able to explain around 40 pct. of the variation in flight prices. We find, that adding network characteristics only increase the out-of-sample prediction marginally, ie. by 0.5 percentage point. The hyperparametrization of the two models is also very similar. In both our models, the weights of the baseline features are quite similar (see table \ref{tab: coefs} in the appendix) for the number of flights, average time, and the number of flights to and from the destination airport. These are the only continuous baseline features with weights that are different from zero. Among the network  features, origin betweenness and both clustering coefficients enters the model with non-zero weights. Based on the size of the coefficients, the clustering coefficient seems to be the most important. The way the network features enter the model is a result of the correlation structure showed in figure \ref{fig:correl} and the Lasso regularization. Running the model without airport fixed effects (not shown) increases the importance of network characteristics, the prediction are much worse however. In this case, the baseline model is able to explain 15.9 percent of the variation whereas the network model can explain 17.9. \\ 
+Finally, the best model is tested on our test data and the results are compared to the corresponding model without network features. The results are summarized in table \ref{tab: model1}. Our model is able to explain around 40 pct. of the variation in flight prices. We find, that adding network characteristics only increase the out-of-sample prediction marginally, ie. by 0.5 percentage point. The hyperparametrization of the two models is also very similar. In both our models, the weights of the baseline features are quite similar (see table \ref{tab: coefs} in the appendix) for the number of flights, average time, and the number of flights to and from the destination airport. These are the only continuous baseline features with weights that are different from zero. Among the network  features, origin betweenness and both clustering coefficients enters the model with non-zero weights. Based on the size of the coefficients, the clustering coefficient seems to be the most important. The way the network features enter the model is a result of the correlation structure showed in figure \ref{fig:correl} and the Lasso regularization. Running the model without airport fixed effects (not shown) increases the importance of network characteristics - the prediction model performs much worse however. In this case, the baseline model is able to explain 15.9 percent of the variation whereas the network model can explain 17.9 percent. 
 
-
+\FloatBarrier
 \begin{table}[htbp]
   \centering
   \caption{Results, Prediction Model}
@@ -107,5 +108,5 @@ Finally, the best model is tested on our test data and the results are compared 
     \end{tabular}%
   \label{tab:addlabel}%
 \end{table}%
-
+\FloatBarrier
 
