@@ -43,20 +43,20 @@ Diameter                     & -             & 5             & 6
 Clustering Coefficient       & 0.63          & 0.63          & 0.57          \\ \hline
 \end{tabular}
 \end{table}
-Figure \ref{fig:degreeDistribution} shows the degree distribution of the network. The hub-and-spoke nature of the network - and the related fact that it is scale-free - is fairly apparent: A large number of nodes have a low degree, while a few nodes have a degree far above the average degree. 
+Figure \ref{fig:degree_distribution} shows the degree distribution of the network, with a fitted power-law distribution. The hub-and-spoke nature of the network - and the related fact that it is scale-free - is fairly apparent: A large number of nodes have a low degree, while a few nodes have a degree far above the average degree. 
 \begin{figure}[H]
   \centering
-  \caption{Degree distribution of network, 2018}
-    \includegraphics[width=0.6 \textwidth]{Exam/Figures/degreeDistribution.png}
-  \label{fig:degreeDistribution}
+  \caption{Degree distribution of network, 1998, 2007 and 2018}
+    \includegraphics[width=1 \textwidth]{Exam/Figures/degree_distribution.png}
+  \label{fig:degree_distribution}
 \end{figure}
-An overview of our three key network characteristic, and how they relate, can be seen in figure \ref{fig:Btwns_CC} in appendix \ref{app: Network characteristics}. Firstly, there is a clear positive relationship between degree and betweenness centrality; airports that are linked to a large number of other airports are also more likely to be part of a shortest path between two airports. This is fairly unsurprising. Secondly, there is no simple relationship between clustering coefficient and either of the other measures. A large number of airports have clustering coefficient equal to 1, implying that all their neighbors are connected to each other. There is also a number of airports with a clustering coefficient of 0, implying that none of their neighbors are connected to each other, or that they only connect to one other airport. 
+An overview of our three key network characteristics, and how they relate, can be seen in figure \ref{fig:Btwns_CC} in appendix \ref{app: Network characteristics}. Firstly, there is a clear positive relationship between degree and betweenness centrality; airports that are linked to a large number of other airports are also more likely to be part of a shortest path between two airports. This is fairly unsurprising. Secondly, there is no simple relationship between clustering coefficient and either of the other measures. A large number of airports have clustering coefficient equal to 1, implying that all their neighbors are connected to each other. There is also a number of airports with a clustering coefficient of 0, implying that none of their neighbors are connected to each other, or that they only connect to one other airport. 
 
 \subsection{Network vulnerability}
 We conduct an analysis of how the network is affected when certain nodes are removed. This analysis is, broadly, in line with the analysis in \cite{chi2004structural}. \\
 The figure below shows how key network characteristics (average degree, clustering coefficient and global efficiency) are affected, when nodes are removed. One curve corresponds to removal of the most connected nodes, this is what we refer to as an 'attack' on the network, where the hubs are targeted. \\
 Secondly, we consider how the network is affected when we remove the least important nodes first. \\
-Finally, we consider how the network is affected by an event that removes all network in a geographical area (such as might be the case due to natural disaster and extreme weather conditions). We conduct this analysis by choosing a spot in the continental US, calculating the (geographical) distances from each airport to this spot, and then removing all airports within x miles. This final analysis takes advantage of the spatial nature of the network, and provides insight into how geographically determined failures may affect the network. \\
+%Finally, we consider how the network is affected by an event that removes all network in a geographical area (such as might be the case due to natural disaster and extreme weather conditions). We conduct this analysis by choosing a spot in the continental US, calculating the (geographical) distances from each airport to this spot, and then removing all airports within x miles. This final analysis takes advantage of the spatial nature of the network, and provides insight into how geographically determined failures may affect the network. \\
 It should be noted, that in this section we analyze the network as it is in our dataset. Obviously, were a number of airports to close for a prolonged period (e.g. due to natural disaster), the agents in the market would make changes to the network to accommodate the new situation. Market forces is likely to have been a determinant in producing the network as is, and exogenous changes to the network would cause changes in behaviour of the agents in the market, that would produce a new network. \\ 
 
 \begin{figure}[H]
