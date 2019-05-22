@@ -1,8 +1,6 @@
 \label{sec:theory}
 % Theoretical arguments in the literature closely related to your study
-In this section we briefly introduce the market for commercial air transport in relation to network theory. We first present basic characteristics of air transport. This is followed by a short description of the network theory most pertinent to our analysis, and the measures we use to characterize the network and expand the feature set for the predictive model. The last subsection describes how we build a prediction model. 
-
-
+In this section we briefly relate the market for commercial air transport to network theory. We first present basic characteristics of air transport. This is followed by a short description of the network theory most pertinent to our analysis, and the measures we use to characterize the network and expand the feature set for the predictive model. The last subsection describes how we build a prediction model. 
 %We draw on network theory to characterize how airports are connected to each other and analyze what role the individual airport plays in the network of airports. The ultimate aim of this analysis is to assess whether flight prices between airports depend on the role each airport plays in the network.\par
 %We view airports as nodes in the network, with flights (or connections) representing links between airport. In connecting the network theory to the reality of the air transport market we use the terms interchangeably. Two airports are linked if there is at least one commercial flight between them in the time frame considered.
 
@@ -22,16 +20,13 @@ That is, a fully-connected network of 9 nodes would have no less than 36 links a
 The other extreme would be the single-hub network where $n$ nodes would only need $n-1$ connections as the $n-1$ non-hub nodes, so called spokes, would
  \par
 \citet{o1987quadratic} presented a hub-and-spoke network as a simple single-assignment model such that non-hub nodes only have one edge, namely the one connecting them to a hub.
-
-
 \begin{figure}[H]
   \centering
-  \caption{Fully-connected point-to-point network vs hub-and-spoke network}
-    \includegraphics[width=1. \textwidth]{03_figures/Bryan_1999_networks}
-    \sourcecenter{\citet{bryan1999hub}}
+  \caption{Two different network types for connecting 7 nodes}
+    \includegraphics[width=\linewidth]{Exam/Figures/network_types}
+    \vspace{-0.7cm}
   \label{fig:different_networks}
 \end{figure}
-
 \subsubsection{Spokes vs focus nodes}
 \citet{o1987quadratic} presented a hub-and-spoke network as a simple single-assignment model such that non-hub nodes only have one edge, namely the one connecting them to a hub. Thus, a single-hub route network connecting $n$ nodes would only need $n-1$ routes
 A hub-and-spoke network
