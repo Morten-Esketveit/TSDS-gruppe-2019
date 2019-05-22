@@ -5,11 +5,12 @@
 The following notebooks are used for the paper: 
 
 1. Data_Compiling 
-2. Descriptive_Statistics
-3. Network_Types
-4. Maps
-5. AttacksAndErrorsAnalysis18
-6. Prediction
+2. Scraping
+3. Descriptive_Statistics
+4. Network_Types
+5. Maps
+6. AttacksAndErrorsAnalysis18
+7. Prediction
 
 
 #### 1. Data_Compiling
