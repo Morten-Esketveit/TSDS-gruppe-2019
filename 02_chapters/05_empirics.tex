@@ -16,11 +16,25 @@ The degree distribution can be seen in the figure below. Clearly, a large number
 
 \begin{figure}[H]
   \centering
-  \caption{Domestic flights network, 2018}
-    \includegraphics[width=1. \textwidth]{Exam/Figures/map_general_18}
-    \vspace{-0.7cm}
-    %\notecenter{Size resembles the degree.}
-  \label{fig:map_general_18}
+  \caption{Network of Colorado Springs (COS) and its direct neighbors}
+    \begin{subfigure}[t]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Exam/Figures/map_COS_98}
+        \caption{1998}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Exam/Figures/map_COS_07} 
+        \caption{2007}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.31\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Exam/Figures/map_COS_18} 
+        \caption{2018}
+    \end{subfigure}
+  \label{fig:map_COS}
 \end{figure}
 As an alternative measures of centrality in the network, we calculate \textit{betweenness centrality} that measures the degree to which an edge is part of the shortest path between two other edges where path length is defined as the number of traversed links. \\
 In the end, we use clustering coefficient, betweenness and degree as features in the prediction model. Note, that these are all node-specific measures, and as such, for each observation, there are two of each corresponding to origin and destination airport. 

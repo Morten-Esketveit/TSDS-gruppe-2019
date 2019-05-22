@@ -32,12 +32,14 @@ We only use the 1998 and 2007 data to assess how the network has changed over ti
 %Data on prices are scraped from the internet. Various sites contain flight prices (Skyscanner, Momondo, Flightfinder, Expedia mv.). Our choice of site will be guided by practical concerns.
 %\par
 %Alternative data:  \url{http://stat-computing.org/dataexpo/2009/}
-%\begin{figure}[H]
-%  \centering
-%  \caption{Airports}
-%    \includegraphics[width=1. \textwidth]{Exam/Airports_WorldMap}
-%  \label{fig:airports}
-%\end{figure}
+\begin{figure}[H]
+  \centering
+  \caption{Domestic flights network, 2018}
+    \includegraphics[width=1. \textwidth]{Exam/Figures/map_general_18}
+    \vspace{-0.7cm}
+    %\notecenter{Size resembles the degree.}
+  \label{fig:map_general_18}
+\end{figure}
 
 \subsection{Price Data}
 We scrape the price data from \url{skyscanner.com} using the \texttt{Selenium} package in Python. The scraper function launches a browser and opens the URL for a given flight at our chosen date which is May 27th. If possible the price of the cheapest direct flight is chosen. The prices of flights operated by Southwest Airlines are not shown at Skyscanner. If their flight is the only one operating, the price of the cheapest indirect flight is chosen. The cheapest indirect flight is also chosen if no carrier is operating a direct flight at the date. For routes where we could not find a price this date, the script is rerun for the next day, the 28th. In order to reduce the number of searches without result and thereby reduce time, we only choose routes with an average of more than one flight per week.\footnote{See github for documentation, \url{https://github.com/Morten-Esketveit/TSDS-gruppe-2019/tree/master/Exam}.}
