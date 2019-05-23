@@ -1,42 +1,51 @@
 \label{sec:theory}
 % Theoretical arguments in the literature closely related to your study
-In this section we briefly relate the market for commercial air transport to network theory. We first present basic characteristics of air transport. This is followed by a short description of the network theory most pertinent to our analysis, and the measures we use to characterize the network and expand the feature set for the predictive model. The last subsection describes how we build a prediction model. 
+In this section we briefly relate the market for commercial air transport to network theory. We first present basic characteristics of air transport.  of the network theory most pertinent to our analysis, and the measures we use to characterize the network and expand the feature set for the predictive model. The last subsection describes how we build a prediction model. 
 %We draw on network theory to characterize how airports are connected to each other and analyze what role the individual airport plays in the network of airports. The ultimate aim of this analysis is to assess whether flight prices between airports depend on the role each airport plays in the network.\par
 %We view airports as nodes in the network, with flights (or connections) representing links between airport. In connecting the network theory to the reality of the air transport market we use the terms interchangeably. Two airports are linked if there is at least one commercial flight between them in the time frame considered.
 
 \subsection{Airline business models}
-As outlined in the background in section \ref{subsec:b_deregulation} the common view is that large airlines specialize in either of two mayor business models with very different network characteristics. The traditional view within academia is that legacy airlines lean towards the hub-and-spoke network while low cost carriers (LCC) lean towards point-to-point connections \citep{daraban2012low,baker2013service,marti2015efficiency}.
-\par
-A third business model can be added, used by smaller regional airlines mainly serving the so-called spokes \citep{forbes2007role}, usually serving as a part of a hub-and-spoke network, though possibly also connecting spokes or offering a few longer-range connections to focus cities. Thus, we refine our common definitions by distinguishing between whether point-to-point connections are between spokes or focus cities.
+As outlined in the background in section \ref{subsec:b_deregulation} the common view within academia is that large airlines specialize in either of two mayor business models with very distinct network characteristics. That is, legacy airlines lean towards managing a hub-and-spoke network while low cost carriers (LCC) lean towards offering point-to-point connections. \citep{daraban2012low,baker2013service,marti2015efficiency}.
 
 \subsubsection{Point-to-point connections}
-Point-to-point connections are direct connections between two nodes. In aviation terminology it is routes connecting airports by non-stop flights as opposed to transfers. One extreme is the fully-connected network in which every node is directly connected to each of the other nodes meaning that the number of links grows exponentially with the number of nodes such that the number of links are
-\begin{equation*}
-  l=\frac{n(n-1)}{2}
-\end{equation*}
-That is, a fully-connected network of 9 nodes would have no less than 36 links as seen in the left panel of Figure \ref{fig:different_networks}.
+Point-to-point connections are direct connections between two nodes. In aviation terminology it is routes connecting airports by non-stop flights as opposed to requiring transfers. One extreme is the fully-connected network in which every node is directly connected to each of the other nodes. While one can get anywhere in the network without wasting time and fuel by transferring in a hub, this also means that the number of links and thus carriers needed grows exponentially with the number of nodes $N$ such that the number of links $L$ are \citep{bryan1999hub}:
+\begin{equation}
+  L=\frac{N\cdot(N-1)}{2}
+  \label{eq:max_links}
+\end{equation}
+As noted by \citet{barabasi2016networks} this will also be the maximum number of links in any non-directed network. That is, a fully connected network of just 7 nodes would have no less than 21 links as seen in the left panel of figure \ref{fig:different_networks}.
 
 \subsubsection{Hub-and-spoke network}
-The other extreme would be the single-hub network where $n$ nodes would only need $n-1$ connections as the $n-1$ non-hub nodes, so called spokes, would
- \par
-\citet{o1987quadratic} presented a hub-and-spoke network as a simple single-assignment model such that non-hub nodes only have one edge, namely the one connecting them to a hub.
+The other extreme would be the single-hub or two-hub network where $N$ nodes would only need $N-1$ connections as the $N_s$ non-hub nodes, so called spokes, would only need to be connected to a hub in order to be indirectly connected to every other node in the network. \citet{o1987quadratic} presented a hub-and-spoke network as a simple single-assignment model such that non-hub nodes only have one edge, namely the one connecting them to a hub.
+\par
+Given that all hubs are interlinked then drawing a few examples by hand will quickly reveal that the number of links $L_{HS}$ depends on the number of hubs $N_H$ and spokes $N_S$ in the following way
+\begin{equation*}
+  L_{HS}=\frac{N_H(N_H-1)}{2}+N_S,\ \ \ \ \ N_H>0
+\end{equation*}
+As seen in the middle panel of figure \ref{fig:different_networks} the two-hub network of 7 nodes only requires 6 links, however, the average shortest path length is $2$ as opposed to $1$ in the fully connected network (see paragraph \ref{par:shortest_path}).
+
+\subsubsection{Focus cities}
+\label{subsec:focus_cities}
+A third business model can be added, namely smaller regional airlines mainly serving the so-called spokes \citep{forbes2007role}. They usually serve as a part of a hub-and-spoke network connecting the spokes to close-by hubs with smaller regional jets. However, regional airlines might also connect spokes to other spokes or even offering a few longer-range connections to other hubs, making the spoke a so called focus cities or a small hub \citep{mammarella2014encyclopedia}.
+\par
+Likewise some airlines are combining the two structures such as the LCC \textit{Frontier}, which first-and-foremost runs a hub in Denver, but in 2012 experimented with a new business model by expanding their service by offering long distance point-to-point flights to four popular West coast hubs via full-size jets from the small airport Colorado Springs (COS), just 90 miles (145 km) south of Denver International Airport.\footnote{\href{https://web.archive.org/web/20160526231749/http://gazette.com/springs-is-frontiers-new-front-in-battle-for-colorado-travelers/article/137275}{http://gazette.com/springs-is-frontiers-new-front-in-battle-for-colorado-travelers/article/137275}} COS being the airport for which we look into network changes over time in figure \ref{fig:map_COS} in section \ref{subsec:empirical_network_characteristics}.
+\par
+In the right panel of figure \ref{fig:different_networks} the spokes in the upper-right corner has been turned into a focus city, thus, cutting off one transfer in order to get to one of the airports in the lower half of the network.
 \begin{figure}[H]
   \centering
-  \caption{Two different network types for connecting 7 nodes}
+  \caption{Three different networks connecting 7 nodes}
     \includegraphics[width=\linewidth]{Exam/Figures/network_types}
     \vspace{-0.7cm}
   \label{fig:different_networks}
 \end{figure}
-\subsubsection{Spokes vs focus nodes}
-\citet{o1987quadratic} presented a hub-and-spoke network as a simple single-assignment model such that non-hub nodes only have one edge, namely the one connecting them to a hub. Thus, a single-hub route network connecting $n$ nodes would only need $n-1$ routes
-A hub-and-spoke network
+
 
 \subsection{Network Theory}
 \label{subsec:Network Theory}
 We draw on network theory to characterize how airports are connected to each other and analyze what role the individual airport plays in the network of airports. %The ultimate aim of this analysis is to assess whether flight prices between airports depend on the role each airport plays in the network. \\
 
 \subsubsection{Air transport as a scale-free network}
-A scale-free network is a network whose degree distribution follows a power law, i.e.: $p_k \sim k^{-\gamma}$. One characteristic of the scale-free networks is the existence of 'hubs' - nodes that have a far higher degree than the average degree. Air transport is - quite literally - a textbook example of a scale-free network, see chapter 4 of \citet{Barabasi}. As we will see in section \ref{sec:empirical}, this is reflected in the degree distribution, where most nodes have a low degree, but some nodes (hubs) have a very high degree.
+A scale-free network is a network whose degree distribution follows a power law, i.e.: $p_k \sim k^{-\gamma}$. One characteristic of the scale-free networks is the existence of 'hubs' - nodes that have a far higher degree than the average degree. Air transport is - quite literally - a textbook example of a scale-free network, see chapter 4 of \citet{barabasi2016networks}. As we will see in section \ref{sec:empirical}, this is reflected in the degree distribution, where most nodes have a low degree, but some nodes (hubs) have a very high degree.
 
 Given this \textit{spoke-and-hub} nature of air transport, we expect the network to have some number of airports that are connected to all or most airports in its geographical vicinity, and well connected to similar airports in other regions. This pattern may be repeating to some extent, insofar as there may be regional, national and international hubs, depending on the size of the country. \\ 
 \medskip
@@ -45,7 +54,7 @@ We further expect the network to be sparse, i.e. that the number of links is (fa
 \subsubsection{A Directed or Undirected Network}
 Although individual flights are clearly directed, going from one airport to the other, we will primarily view the network as undirected. The reason being, that connections between airports are typically undirected.
 
-As we will see in the data analysis, flights from airport i to airport j, almost always implies flights from airport j to airport i. We believe that this approach to the network of airports is well suited for our analysis, that focuses exclusively on the effect on prices. An analysis of e.g. how delays propagate through the network, would require viewing links as directed and including time in a more intricate manner.\\
+As we will see in the data analysis, flights from airport i to airport j, almost always implies flights from airport j to airport i. We believe that this approach to the network of airports is well suited for our analysis, that focuses exclusively on the effect on prices. An analysis of e.g. how delays propagate through the network, would require viewing links as directed and including time in a more intricate manner.
 
 \subsubsection{Weighted Network and Temporal Considerations}
 In our analysis, we view the network as unweighted, i.e. all edges are considered equal. While this somewhat simplifies the analysis, we could have chosen to weight edges e.g. by letting the number of flights between two airports determine the 'weight' of their common edge. 
@@ -55,15 +64,13 @@ The considered time frame clearly matters for the characteristics of the network
 \subsubsection{Selected Network Measures}
 In the course of the analysis, we draw upon a variety of measures to characterize the network. In the choice of measures, we look to \citet{chi2004structural}. The measures we have chosen to use are presented below. They are: Average degree, clustering coefficient, diameter, average shortest path length and betweenness centrality.
 
-
 \paragraph{Average Degree}\mbox{} \\
-
 The degree of node \textit{i} is the number of nodes with which node \textit{i} share an edge. In our cases, the degree of an airport is the number of airports to which it has flights (or that have flights to itself). 
 The average degree is then simply the average across nodes. Average degree is calculated as: 
 \begin{align}
     \text{Average degree} = \frac{1}{N} \sum_{i = 1}^N k_i = \frac{2L}{N}
 \end{align}
-\medskip
+
 \paragraph{Clustering Coefficient} \mbox{} \\
 The clustering coefficient for a given node \textit{i} is given as: 
 \begin{align}
@@ -71,17 +78,18 @@ The clustering coefficient for a given node \textit{i} is given as:
     \intertext{Where $L_i$ denotes the number of links between node \textit{i}'s neighbors. The clustering coefficient of the network is then given by:}
     C = \frac{1}{N} \sum^N_{i=1} C_i
 \end{align}
-The clustering coefficient for a single node is equal to the fraction of possible edges between node \textit{i}'s neighbors (nodes it is connected to) that are found in the network. A node whose neighbors are all connected to each other will have a clustering coefficient of 1. Conversely, if none of the nodes neighbors are connected, it will have a clustering coefficient of 0. Note, that for nodes with degree 1, the clustering coefficient is 0. 
-\medskip
-\paragraph{Average Shortest Path Length}\mbox{} \\
+The clustering coefficient for a single node is equal to the fraction of possible edges between node \textit{i}'s neighbors (nodes it is connected to) that are found in the network. A node whose neighbors are all connected to each other will have a clustering coefficient of 1. Conversely, if none of the nodes neighbors are connected, it will have a clustering coefficient of 0. Note, that for nodes with degree 1, the clustering coefficient is 0.
+
+\paragraph{Average Shortest Path Length}\mbox{} \label{par:shortest_path} \\
 The average shortest path length is defined as: 
 \begin{align}
     a = \sum_{s,t \in V} \frac{d(s,t)}{N(N-1)}
 \end{align}
 Where V is the set of nodes in the network, and N is the number of nodes.
+
 \paragraph{Diamater} \mbox{} \\
 The diameter is the maximum shortest path length between any two nodes in the network. 
-\medskip
+
 \paragraph{Betweenness Centrality}\mbox{} \\
 Finally, we also calculate the betweenness centrality. For node \textit{i}, this is the fraction of shortest paths between all nodes in the network that pass through node \textit{i}, \citep{brandes2008variants}.
 
