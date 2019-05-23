@@ -13,14 +13,14 @@ Point-to-point connections are direct connections between two nodes. In aviation
   L=\frac{N\cdot(N-1)}{2}
   \label{eq:max_links}
 \end{equation}
-As noted by \citet{barabasi2016networks} this will also be the maximum number of links in any non-directed network. That is, a fully connected network of just 7 nodes would have no less than 21 links as seen in the left panel of figure \ref{fig:different_networks}.
+As noted by \citet{barabasi2016networks} this will also be the maximum number of links in any non-directed network. That is, a complete graph of just 7 nodes would have no less than 21 links as seen in the left panel of figure \ref{fig:different_networks} below.
 
 \subsubsection{Hub-and-spoke network}
 The other extreme would be the single-hub or two-hub network where $N$ nodes would only need $N-1$ connections as the $N_s$ non-hub nodes, so called spokes, would only need to be connected to a hub in order to be indirectly connected to every other node in the network. \citet{o1987quadratic} presented a hub-and-spoke network as a simple single-assignment model such that non-hub nodes only have one edge, namely the one connecting them to a hub.
 \par
 Given that all hubs are interlinked then drawing a few examples by hand will quickly reveal that the number of links $L_{HS}$ depends on the number of hubs $N_H$ and spokes $N_S$ in the following way
 \begin{equation*}
-  L_{HS}=\frac{N_H(N_H-1)}{2}+N_S,\ \ \ \ \ N_H>0
+  L_{HS}=\frac{N_H\cdot(N_H-1)}{2}+N_S,\ \ \ \ \ N_H>0
 \end{equation*}
 As seen in the middle panel of figure \ref{fig:different_networks} the two-hub network of 7 nodes only requires 6 links, however, the average shortest path length is $2$ as opposed to $1$ in the fully connected network (see paragraph \ref{par:shortest_path}).
 
