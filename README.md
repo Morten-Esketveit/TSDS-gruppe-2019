@@ -1,5 +1,5 @@
 # TSDS-gruppe-2019
-Exam project in Topics in Social Data Science course joint with [Thor D. Noe](https://github.com/thornoe) and Christian L. Sørensen.
+Exam project in Topics in Social Data Science course joint with [Thor D. Noe](https://github.com/thornoe) and [Christian L. Sørensen](https://github.com/ChristianLS).
 
 See [abjer/tsds](https://github.com/abjer/tsds) for the public course material.
 
