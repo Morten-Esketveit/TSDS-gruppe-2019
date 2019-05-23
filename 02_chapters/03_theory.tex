@@ -65,7 +65,7 @@ The considered time frame clearly matters for the characteristics of the network
 In the course of the analysis, we draw upon a variety of measures to characterize the network. In the choice of measures, we look to \citet{chi2004structural}. The measures we have chosen to use are presented below. They are: Average degree, clustering coefficient, diameter, average shortest path length and betweenness centrality.
 
 \paragraph{Average Degree}\mbox{} \\
-The degree of node \textit{i} is the number of nodes with which node \textit{i} share an edge. In our cases, the degree of an airport is the number of airports to which it has flights (or that have flights to itself). 
+The degree $k_i$ of node \textit{i} is the number of nodes with which node \textit{i} share an edge. In our cases, the degree of an airport is the number of airports to which it has flights (or that have flights to itself). 
 The average degree is then simply the average across nodes. Average degree is calculated as: 
 \begin{align}
     \text{Average degree} = \frac{1}{N} \sum_{i = 1}^N k_i = \frac{2L}{N}
@@ -85,7 +85,7 @@ The average shortest path length is defined as:
 \begin{align}
     a = \sum_{s,t \in V} \frac{d(s,t)}{N(N-1)}
 \end{align}
-Where V is the set of nodes in the network, and N is the number of nodes.
+Where V is the set of nodes in the network $d(i,j)$ is the length of the shortest path between nodes \textit{i} and \textit{j}, and N is the number of nodes.
 
 \paragraph{Diamater} \mbox{} \\
 The diameter is the maximum shortest path length between any two nodes in the network. 
