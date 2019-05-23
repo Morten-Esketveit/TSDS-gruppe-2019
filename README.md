@@ -1,16 +1,21 @@
 # TSDS-gruppe-2019
+Exam project in Topics in Social Data Science course joint with [Thor D. Noe](https://github.com/thornoe) and Christian L. Sørensen.
 
-## Exam
+See [abjer/tsds](https://github.com/abjer/tsds) for the public course material.
+
+## *Prices in Air Transport*
+### *Can Airport Network Characteristics Aid in Prediction?*
+
 #### Overview of notebooks
 The following notebooks are used for the paper: 
 
-[1. Data_Compiling](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#1-data_compiling)
-[2. Scraping](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#2-scraping)
-[3. Descriptive_Statistics](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#3-descriptive_statistics)
-[4. Network_Types](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#4-network_types)
-[5. Maps](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#5-maps)
-[6. AttacksAndErrorsAnalysis18](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#6-attacksanderroranalysis18)
-[7. Prediction](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#7-prediction)
+1. [Data_Compiling](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#1-data_compiling)
+2. [Scraping](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#2-scraping)
+3. [Descriptive_Statistics](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#3-descriptive_statistics)
+4. [Network_Types](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#4-network_types)
+5. [Maps](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#5-maps)
+6. [AttacksAndErrorsAnalysis18](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#6-attacksanderroranalysis18)
+7. [Prediction](https://github.com/Morten-Esketveit/TSDS-gruppe-2019#7-prediction)
 
 
 #### 1. [Data_Compiling](https://github.com/Morten-Esketveit/TSDS-gruppe-2019/blob/master/Exam/Data_compiling_v3.ipynb)
