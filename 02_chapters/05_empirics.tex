@@ -23,28 +23,27 @@ Eight hubs of Delta Airlines, \url{https://news.delta.com/corporate-stats-and-fa
   \label{fig:map_general_18}
 \end{figure}
 \noindent
-To get a further sense of how the network is connected we calculate the \textit{degree centrality} for each node in the network, i.e. the number of other airports each airport is connected to through flights in 2018. The average degree for the 358 airports contained in the dataset is 18,0. This average masks a huge variation; the highest degree found in the dataset is the O'Hare International Airport (ORD) in Chigago with a degree of 176.  Conversely, 51 airports have a degree of 1, implying that in this dataset they only appear in connection with a single other airport. par
+To get a further sense of how the network is connected we calculate the \textit{degree centrality} for each node in the network, i.e. the number of other airports each airport is connected to through flights in 2018. The average degree for the 358 airports contained in the dataset is 18,0. This average masks a huge variation; the highest degree found in the dataset is the O'Hare International Airport (ORD) in Chigago with a degree of 176.  Conversely, 51 airports have a degree of 1, implying that in this dataset they only appear in connection with a single other airport. 
 The degree distribution for each of the years 1998, 2008, and 2018 can be seen in figure \ref{fig:degree_distribution} and can also be grasped in figure \ref{fig:map_general_18} through the size and color of the nodes. Clearly, a large number of airports are connected by flights to few other airports, while a minority of airports are much more connected.
 \par
-Table \ref{tab: temporal} shows key characteristics of the network for 1998, 2008, and 2018 respectively. The number of airports has risen substantially in the period, as has the number of unique flight routes. The average degree of the network rose from 1998 to 2008, but fell slightly from 2008 to 2018. One should of course keep in mind, that the rise in the number of airports \todo{We include any airport with as little as one civil flight to or from any other airport?} covers both construction of new airports and existing airport being opened to domestic civil aviation. %is not necessarily a sign of construction of new airports, but could follow from more carriers, and thereby airports, meeting the inclusion criteria for the dataset.
+Table \ref{tab: temporal} shows key characteristics of the network for 1998, 2008, and 2018 respectively. For the network in 1998, average shortest path length and diameter is not defined, since the network is not connected. The number of airports has risen substantially in the period, as has the number of unique flight routes. The average degree of the network rose from 1998 to 2008, but fell slightly from 2008 to 2018. One should of course keep in mind, that the rise in the number of airports \todo{We include any airport with as little as one civil flight to or from any other airport?} covers both construction of new airports and existing airport being opened to domestic civil aviation. %is not necessarily a sign of construction of new airports, but could follow from more carriers, and thereby airports, meeting the inclusion criteria for the dataset.
 \begin{table}[H]
 \centering 
 \caption{Network Characteristics, 1998-2018}
 \label{tab: temporal}
 \begin{tabular}{|l|l|l|l|}
 \hline
-\textbf{}                    & \textbf{1998} & \textbf{2007} & \textbf{2018} \\ \hline
-Nodes                        & 209           & 310           & 358           \\
-Edges                        & 1614          & 2868          & 3220          \\
-Average degree               & 15.45         & 18.50         & 18.0          \\
-Average shortest path length & -\todo{Hvorfor kan vi ikke beregne det?}             & 2.31          & 2.38          \\ 
-Diameter                     & -             & 5             & 6 
-     \\
-Clustering Coefficient       & 0.63          & 0.63          & 0.57          \\ \hline
+\textbf{}                    & \textbf{1998} & \textbf{2008} & \textbf{2018} \\ \hline
+Nodes                        & 209           & 310           & 355           \\
+Edges                        & 1614          & 2754          & 3110          \\
+Average degree               & 15.5         & 18.1         & 17.5          \\
+Average shortest path length & -           & 2.33          & 2.39          \\ 
+Diameter                     & -             & 5             & 6           \\
+Clustering Coefficient       & 0.63          & 0.65          & 0.57          \\ \hline
 \end{tabular}
 \end{table}
 \noindent
-To look into an example of how the network structure has changed over time we investigate the network consisting of the small airport Colorado Springs (COS) and its neighbors in figure \ref{fig:map_COS}. In the left panel we see that COS in 1998 was connected to 11 of the 10 closest inland hubs (except for Las Vegas) and only connected to a single airport that is not one of the absolute mayor hubs to an extent where the average degree between the 12 nodes is 10.8 out of possible 11. This is as close as one could dream of getting to observing a perfect hub-and-spoke network in reality. In order to fly to COS from any West- or East Coast city (or vice versa) it is mandatory to transfer at one of the 10 bigger inland hubs. Interestingly enough, by 2008 several connections to smaller airports were maintained such that the average degree distribution only was 18.4 out of possible 26. This was followed by a reversion such that COS in 2018 again was almost excludingly connected to mayor hubs. The difference being that one now suddenly did not need to transfer to get directly to Florida or New York by the East Coast or to Las Vegas, LA or Seattle by the West Coast. Though the latter two possibly being down to \textit{Frontier Airlines} as mentioned in subsection \ref{subsec:focus_cities}, the process of establishing Colorado Springs as a focus city with important long distance connections clearly did not stop there.
+To look into an example of how the network structure has changed over time we investigate the network consisting of the small airport Colorado Springs (COS) and its neighbors in figure \ref{fig:map_COS}. In the left panel we see that COS in 1998 was connected to 11 of the 10 closest inland hubs (except for Las Vegas) and only connected to a single airport that is not one of the absolute mayor hubs to an extent where the average degree between the 12 nodes is 10.8 out of possible 11. This is as close as one could dream of getting to observing a perfect hub-and-spoke network in reality. In order to fly to COS from any West- or East Coast city (or vice versa) it is mandatory to transfer at one of the 10 bigger inland hubs. Interestingly enough, by 2008 several connections to smaller airports were maintained such that the average degree distribution only was 18.4 out of possible 26. This was followed by a reversion such that COS in 2018 again was almost exclusively connected to mayor hubs. The difference being that one now suddenly did not need to transfer to get directly to Florida or New York by the East Coast or to Las Vegas, LA or Seattle by the West Coast. Though the latter two possibly being down to \textit{Frontier Airlines} as mentioned in subsection \ref{subsec:focus_cities}, the process of establishing Colorado Springs as a focus city with important long distance connections clearly did not stop there.
 \begin{figure}[H]
   \centering
   \caption{Network of Colorado Springs (COS) and its direct neighbors}
@@ -55,7 +54,7 @@ To look into an example of how the network structure has changed over time we in
     \hfill
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{Exam/Figures/map_COS_07} 
+        \includegraphics[width=\linewidth]{Exam/Figures/map_COS_08} 
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.32\textwidth}
@@ -68,7 +67,7 @@ To look into an example of how the network structure has changed over time we in
 The degree distribution of the network is shown in figure \ref{fig:degree_distribution} with a fitted power-law distribution. The hub-and-spoke nature of the network - and the related fact that it is scale-free - is fairly apparent: A large number of nodes have a low degree, while a few nodes have a degree far above the average degree. 
 \begin{figure}[H]
   \centering
-  \caption{Degree distribution of network, 1998, 2007 and 2018}
+  \caption{Degree distribution of network, 1998, 2008 and 2018}
     \includegraphics[width=1 \textwidth]{Exam/Figures/degree_distributionv2.png}
   \label{fig:degree_distribution}
 \end{figure}
