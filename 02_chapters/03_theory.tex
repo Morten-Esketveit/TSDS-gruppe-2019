@@ -1,6 +1,6 @@
 \label{sec:theory}
 % Theoretical arguments in the literature closely related to your study
-In this section we briefly relate the market for commercial air transport to network theory. We first present basic characteristics of air transport.  of the network theory most pertinent to our analysis, and the measures we use to characterize the network and expand the feature set for the predictive model. The last subsection describes how we build a prediction model. 
+In this section we briefly relate the market for commercial air transport to network theory. We first present basic characteristics of air transport. We present the network theory most pertinent to our analysis, and the measures we use to characterize the network and expand the feature set for the predictive model. The last subsection describes how we build a prediction model. 
 %We draw on network theory to characterize how airports are connected to each other and analyze what role the individual airport plays in the network of airports. The ultimate aim of this analysis is to assess whether flight prices between airports depend on the role each airport plays in the network.\par
 %We view airports as nodes in the network, with flights (or connections) representing links between airport. In connecting the network theory to the reality of the air transport market we use the terms interchangeably. Two airports are linked if there is at least one commercial flight between them in the time frame considered.
 
@@ -16,7 +16,7 @@ Point-to-point connections are direct connections between two nodes. In aviation
 As noted by \citet{barabasi2016networks} this will also be the maximum number of links in any non-directed network. That is, a complete graph of just 7 nodes would have no less than 21 links as seen in the left panel of figure \ref{fig:different_networks} below.
 
 \subsubsection{Hub-and-spoke network}
-The other extreme would be the single-hub or two-hub network where $N$ nodes would only need $N-1$ connections as the $N_s$ non-hub nodes, so called spokes, would only need to be connected to a hub in order to be indirectly connected to every other node in the network. \citet{o1987quadratic} presented a hub-and-spoke network as a simple single-assignment model such that non-hub nodes only have one edge, namely the one connecting them to a hub.
+The other extreme would be the single-hub or two-hub network where $N$ nodes would only need $N-1$ connections as the $N_s$ non-hub nodes, so called spokes, would only need to be connected to a hub in order to be indirectly connected to every other node in the network. \citet{o1987quadratic} presented a hub-and-spoke network as a simple single-assignment model such that non-hub nodes only have one link, namely the one connecting them to a hub.
 \par
 Given that all hubs are interlinked then drawing a few examples by hand will quickly reveal that the number of links $L_{HS}$ depends on the number of hubs $N_H$ and spokes $N_S$ in the following way
 \begin{equation*}
@@ -47,9 +47,10 @@ We draw on network theory to characterize how airports are connected to each oth
 \subsubsection{Air transport as a scale-free network}
 A scale-free network is a network whose degree distribution follows a power law, i.e.: $p_k \sim k^{-\gamma}$. One characteristic of the scale-free networks is the existence of 'hubs' - nodes that have a far higher degree than the average degree. Air transport is - quite literally - a textbook example of a scale-free network, see chapter 4 of \citet{barabasi2016networks}. As we will see in section \ref{sec:empirical}, this is reflected in the degree distribution, where most nodes have a low degree, but some nodes (hubs) have a very high degree.
 
-Given this \textit{spoke-and-hub} nature of air transport, we expect the network to have some number of airports that are connected to all or most airports in its geographical vicinity, and well connected to similar airports in other regions. This pattern may be repeating to some extent, insofar as there may be regional, national and international hubs, depending on the size of the country. \\ 
-\medskip
-We further expect the network to be sparse, i.e. that the number of links is (far) lower than the number of possible links. This also reflects the hub-and-spoke nature of the network, in that small local airports are likely to have a low number of links, particularly relative to the possible number of links. We further expect the network to be connected, in the sense that, given an appropriate time frame, there will always be a path from one airport to the other (through some number of other airports).
+Given this \textit{spoke-and-hub} nature of air transport, we expect the network to have some airports that are connected to all or most other airports in its geographical vicinity, and well connected to similar airports in other regions. This pattern may be repeating to some extent, insofar as there may be regional, national and international hubs, depending on the size of the country. 
+
+%%\medskip
+We further expect the network to be sparse, i.e. that the number of links is (far) lower than the number of possible links. This also reflects the hub-and-spoke nature of the network, in that small local airports are likely to have a low number of links, particularly relative to the possible number of links. However, we expect the network to be connected, in the sense that, given an appropriate time frame, there will always be a path from one airport to the other (through some number of other airports).
 
 \subsubsection{A Directed or Undirected Network}
 Although individual flights are clearly directed, going from one airport to the other, we will primarily view the network as undirected. The reason being, that connections between airports are typically undirected.
@@ -57,15 +58,14 @@ Although individual flights are clearly directed, going from one airport to the 
 As we will see in the data analysis, flights from airport i to airport j, almost always implies flights from airport j to airport i. We believe that this approach to the network of airports is well suited for our analysis, that focuses exclusively on the effect on prices. An analysis of e.g. how delays propagate through the network, would require viewing links as directed and including time in a more intricate manner.
 
 \subsubsection{Weighted Network and Temporal Considerations}
-In our analysis, we view the network as unweighted, i.e. all edges are considered equal. While this somewhat simplifies the analysis, we could have chosen to weight edges e.g. by letting the number of flights between two airports determine the 'weight' of their common edge. 
-\medskip \\
-The considered time frame clearly matters for the characteristics of the network, since not all flights between airports take place every day or even every week. Considering a years worth of flights will produce far more links in the network than considering the flights that take place on a particular day. We choose to analyze the yearly network, to ensure that we also capture flights (edges) that are seasonal in nature, e.g. flights that only happen in the summertime, or close to specific holidays. 
+We view the network as unweighted, i.e. all links are considered equal. While this somewhat simplifies the analysis, we could have chosen to weight links e.g. by letting the number of flights between two airports determine the 'weight' of their common link. \\
+The considered time frame clearly matters for the characteristics of the network, since not all flights between airports take place every day or even every week. Considering a years worth of flights will produce far more links in the network than considering the flights that take place on a particular day. We choose to analyze the yearly network, to ensure that we also capture flights (links) that are seasonal in nature, e.g. flights that only happen in the summertime, or close to specific holidays. 
 
 \subsubsection{Selected Network Measures}
 In the course of the analysis, we draw upon a variety of measures to characterize the network. In the choice of measures, we look to \citet{chi2004structural}. The measures we have chosen to use are presented below. They are: Average degree, clustering coefficient, diameter, average shortest path length and betweenness centrality.
 
 \paragraph{Average Degree}\mbox{} \\
-The degree $k_i$ of node \textit{i} is the number of nodes with which node \textit{i} share an edge. In our cases, the degree of an airport is the number of airports to which it has flights (or that have flights to itself). 
+The degree $k_i$ of node \textit{i} is the number of nodes with which node \textit{i} share a link. In our cases, the degree of an airport is the number of airports to which it has flights (or that have flights to itself). 
 The average degree is then simply the average across nodes. Average degree is calculated as: 
 \begin{align}
     \text{Average degree} = \frac{1}{N} \sum_{i = 1}^N k_i = \frac{2L}{N}
@@ -78,7 +78,7 @@ The clustering coefficient for a given node \textit{i} is given as:
     \intertext{Where $L_i$ denotes the number of links between node \textit{i}'s neighbors. The clustering coefficient of the network is then given by:}
     C = \frac{1}{N} \sum^N_{i=1} C_i
 \end{align}
-The clustering coefficient for a single node is equal to the fraction of possible edges between node \textit{i}'s neighbors (nodes it is connected to) that are found in the network. A node whose neighbors are all connected to each other will have a clustering coefficient of 1. Conversely, if none of the nodes neighbors are connected, it will have a clustering coefficient of 0. Note, that for nodes with degree 1, the clustering coefficient is 0.
+The clustering coefficient for a single node is equal to the fraction of possible links between node \textit{i}'s neighbors (nodes it is connected to) that are found in the network. A node whose neighbors are all connected to each other will have a clustering coefficient of 1. Conversely, if none of the nodes neighbors are connected, it will have a clustering coefficient of 0. Note, that for nodes with degree 1, the clustering coefficient is 0.
 
 \paragraph{Average Shortest Path Length}\mbox{} \label{par:shortest_path} \\
 The average shortest path length is defined as: 
