@@ -3,17 +3,48 @@
 % Description of the empirical model: specification and variables involved
 % Strategy for the estimation of the parameters of interest and test of the hypothesis
 \subsection{Network Characteristics}
-When analyzing the network we utilize the \texttt{NetworkX} package in Python. We start by characterizing the network. Recall, that we view airports as nodes, and flights between airports as edges. Considering the dataset of flights in 2018 from the Bureau of Transportation Statistics, we produce a network of US airports and the flights connecting them. We will refer to this network as the US Network. This network has 358 nodes and 3220 edges. With 310 nodes, the maximum possible number of edges would be (\cite{Barabasi Networks}): 
+\label{subsec:empirical_network_characteristics}
+When analyzing the network we utilize the \texttt{NetworkX} package in Python. We start by characterizing the network. Recall, that we view airports as nodes, and flights between airports as edges. Considering the dataset of flights in 2018 from the Bureau of Transportation Statistics, we produce a network of US airports and the flights connecting them. We will refer to this network as the US Network. This network has 358 nodes and 3220 edges. Inserting the number of nodes 358 in equation \ref{eq:max_links}, the maximum possible number of edges \todo{I teoriafsnittet har Morten og jeg gennemgående kaldt 'edges' for 'links'. Vi skal lige tage en fælles beslutning og konsekvensrette.}would be: 
 \begin{align}
-    L_{max}  = \frac{N\cdot(N-1)}{2}=\frac{358\cdot(358-1)}{2} = 63.903
+    L_{max}  = \frac{358\cdot(358-1)}{2} = 63.903
 \end{align}
 This implies, that only approximately 5 pct. of possible edges are actually found in the network. 
 % Tjek nedenstående når vi ved mere
-This sparseness of the network supports the hub-and-spoke view of air transport; rather than having all airports be connected, it is more economically sensible to have certain airports function as hubs in their geographical area, and connect to hubs in other regional areas. \\ 
-To get a further sense of how the network is connected we calculate the degree centrality for each node in the network, i.e. the number of other airports each airport is connected to through flights in 2018. \\
-The average degree for the 358 airports contained in the dataset is 18,0. This average masks a huge variation; the highest degree found in the dataset is the O'Hare International Airport (ORD) in Chigago with a degree of 176.  Conversely, 51 airports have a degree of 1, implying that in this dataset they only appear in connection with a single other airport. \\
-The degree distribution can be seen in the figure below. Clearly, a large number of airports are connected by flights to few other airports, while a minority of airports are much more connected.
-
+This sparseness of the network supports the hub-and-spoke view of air transport; rather than having all airports be connected, it is more economically feasible to have certain airports function as hubs in their geographical area, and connect to hubs in other regional areas.
+\par
+Figure \ref{fig:map_general_18} shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network is clear. Hubs are somewhat distributed geographically and - at a glance - are placed near the larger population centres. Similar maps of the network in 1998 and 2007 can be found in figures \ref{fig:map_general_98} and \ref{fig:map_general_07} in appendix \ref{app:map_general}. The network seems to have been relatively stable over time in the sense that airports that were well connected in 2007 are still well connected in 2018. The business model of a hub-and-spoke structure for the individual airlines is apparent as all of the 15 hubs for the two largest legacy airlines\footnote{Ten hubs of American Airlines, \url{http://news.aa.com/multimedia/default.aspx#factsheets}\\
+Eight hubs of Delta Airlines, \url{https://news.delta.com/corporate-stats-and-facts}} are among the large and medium sized hubs, even more so, the network as a whole seem to follow a clear hub-and-spoke structure.
+\begin{figure}[H]
+  \centering
+  \caption{Domestic flights network, 2018}
+    \includegraphics[width=1. \textwidth]{Exam/Figures/map_general_18}
+    \vspace{-0.7cm}
+    %\notecenter{Size resembles the degree.}
+  \label{fig:map_general_18}
+\end{figure}
+\noindent
+To get a further sense of how the network is connected we calculate the \textit{degree centrality} for each node in the network, i.e. the number of other airports each airport is connected to through flights in 2018. The average degree for the 358 airports contained in the dataset is 18,0. This average masks a huge variation; the highest degree found in the dataset is the O'Hare International Airport (ORD) in Chigago with a degree of 176.  Conversely, 51 airports have a degree of 1, implying that in this dataset they only appear in connection with a single other airport. par
+The degree distribution for each of the years 1998, 2007, and 2018 can be seen in figure \ref{fig:degree_distribution} and can also be grasped in figure \ref{fig:map_general_18} through the size and color of the nodes. Clearly, a large number of airports are connected by flights to few other airports, while a minority of airports are much more connected.
+\par
+Table \ref{tab: temporal} shows key characteristics of the network for 1998, 2007, and 2018 respectively. The number of airports has risen substantially in the period, as has the number of unique flight routes. The average degree of the network rose from 1998 to 2007, but fell slightly from 2007 to 2018. One should of course keep in mind, that the rise in the number of airports \todo{We include any airport with as little as one civil flight to or from any other airport?} covers both construction of new airports and existing airport being opened to domestic civil aviation. %is not necessarily a sign of construction of new airports, but could follow from more carriers, and thereby airports, meeting the inclusion criteria for the dataset.
+\begin{table}[H]
+\centering 
+\caption{Network Characteristics, 1998-2018}
+\label{tab: temporal}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{}                    & \textbf{1998} & \textbf{2007} & \textbf{2018} \\ \hline
+Nodes                        & 209           & 310           & 358           \\
+Edges                        & 1614          & 2868          & 3220          \\
+Average degree               & 15.45         & 18.50         & 18.0          \\
+Average shortest path length & -\todo{Hvorfor kan vi ikke beregne det?}             & 2.31          & 2.38          \\ 
+Diameter                     & -             & 5             & 6 
+     \\
+Clustering Coefficient       & 0.63          & 0.63          & 0.57          \\ \hline
+\end{tabular}
+\end{table}
+\noindent
+To look into an example of how the network structure has changed over time we investigate the network consisting of the small airport Colorado Springs (COS) and its neighbors in figure \ref{fig:map_COS}. In the left panel we see that COS in 1998 was connected to 11 of the 10 closest inland hubs (except for Las Vegas) and only connected to a single airport that is not one of the absolute mayor hubs to an extent where the average degree between the 12 nodes is 10.8 out of possible 11. This is as close as one could dream of getting to observing a perfect hub-and-spoke network in reality. In order to fly to COS from any West- or East Coast city (or vice versa) it is mandatory to transfer at one of the 10 bigger inland hubs. Interestingly enough, by 2007 several connections to smaller airports were maintained such that the average degree distribution only was 16,8 out of possible 25. This was followed by a reversion such that COS in 2018 again was almost excludingly connected to mayor hubs. The difference being that one now suddenly did not need to transfer to get directly to Florida or New York by the East Coast or to Las Vegas, LA or Seattle by the West Coast. Though the latter two possibly being down to \textit{Frontier Airlines} as mentioned in subsection \ref{subsec:focus_cities}, the process of establishing Colorado Springs as a focus city with important long distance connections clearly did not stop there.
 \begin{figure}[H]
   \centering
   \caption{Network of Colorado Springs (COS) and its direct neighbors}
@@ -33,41 +64,28 @@ The degree distribution can be seen in the figure below. Clearly, a large number
     \end{subfigure}
   \label{fig:map_COS}
 \end{figure}
-As an alternative measures of centrality in the network, we calculate \textit{betweenness centrality} that measures the degree to which an edge is part of the shortest path between two other edges where path length is defined as the number of traversed links. \\
-In the end, we use clustering coefficient, betweenness and degree as features in the prediction model. Note, that these are all node-specific measures, and as such, for each observation, there are two of each corresponding to origin and destination airport. 
-
-% Figur med hhv. degree distribution (til venstre) og betweenness centrality (højre)?
-Figure \ref{fig:map_general_18} shows every airport in the network we consider, and the edges that connect them. The network is distributed spatially according to the actual geographical locations of the airports, and overlaid on a map of the continental US. From a visual examination the hub-and-spoke nature of the network is clear. Hubs are somewhat distributed geographically and - at a glance - seem to be placed near population centres. Similar maps of the network in 1998 and 2007 can be found in figures \ref{fig:map_general_98} and \ref{fig:map_general_07} in appendix \ref{app:map_general}. The network seems to have been relatively stable over time; airports that were well connected in 2007 are still well connected in 2018. Table \ref{tab: temporal} shows key characteristics of the network in 1998, 2007 and 2018. The number of airports has risen substantially in the period, as has the number of unique flight routes. The average degree of the network rose from 1998 to 2007, but fell slightly from 2007 to 2018. One should of course keep in mind, that the rise in the number of airports is not necessarily a sign of construction of new airports, but could follow from more carriers, and thereby airports, meeting the inclusion criteria for the dataset.
-\begin{table}[H]
-\centering 
-\caption{Network Characteristics, 1998-2018}
-\label{tab: temporal}
-\begin{tabular}{|l|l|l|l|}
-\hline
-\textbf{}                    & \textbf{1998} & \textbf{2007} & \textbf{2018} \\ \hline
-Nodes                        & 209           & 310           & 358           \\
-Edges                        & 1614          & 2868          & 3220          \\
-Average degree               & 15.45         & 18.50         & 18.0          \\
-Average shortest path length & -             & 2.31          & 2.38          \\ 
-Diameter                     & -             & 5             & 6 
-     \\
-Clustering Coefficient       & 0.63          & 0.63          & 0.57          \\ \hline
-\end{tabular}
-\end{table}
-Figure \ref{fig:degree_distribution} shows the degree distribution of the network, with a fitted power-law distribution. The hub-and-spoke nature of the network - and the related fact that it is scale-free - is fairly apparent: A large number of nodes have a low degree, while a few nodes have a degree far above the average degree. 
+\noindent
+The degree distribution of the network is shown in figure \ref{fig:degree_distribution} with a fitted power-law distribution. The hub-and-spoke nature of the network - and the related fact that it is scale-free - is fairly apparent: A large number of nodes have a low degree, while a few nodes have a degree far above the average degree. 
 \begin{figure}[H]
   \centering
   \caption{Degree distribution of network, 1998, 2007 and 2018}
     \includegraphics[width=1 \textwidth]{Exam/Figures/degree_distributionv2.png}
   \label{fig:degree_distribution}
 \end{figure}
-An overview of our three key network characteristics, and how they relate, can be seen in figure \ref{fig:Btwns_CC} in figure \ref{fig:Btwns_CC} below. Firstly, there is a clear positive relationship between degree and betweenness centrality; airports that are linked to a large number of other airports are also more likely to be part of a shortest path between two airports. This is fairly unsurprising. Secondly, there is no simple relationship between clustering coefficient and either of the other measures. A large number of airports have clustering coefficient equal to 1, implying that all their neighbors are connected to each other. There is also a number of airports with a clustering coefficient of 0, implying that none of their neighbors are connected to each other, or that they only connect to one other airport. 
+\noindent
+As an alternative measures of centrality in the network, we calculate \textit{betweenness centrality} that measures the degree to which an edge is part of the shortest path between two other edges where path length is defined as the number of traversed links.
+% Figur med hhv. degree distribution (til venstre) og betweenness centrality (højre)?
+\par
+An overview of our three key network characteristics, and how they relate, can be seen in figure \ref{fig:Btwns_CC}. Firstly, there is a clear positive relationship between degree and betweenness centrality; airports that are linked to a large number of other airports are also more likely to be part of a shortest path between two airports. This is fairly unsurprising. Secondly, there is no simple relationship between clustering coefficient and either of the other measures. A large number of airports have clustering coefficient equal to 1, implying that all their neighbors are connected to each other. There is also a number of airports with a clustering coefficient of 0, implying that none of their neighbors are connected to each other, or that they only connect to one other airport. 
 \begin{figure}[H]
   \centering
   \caption{Betweenness centrality, clustering coefficient and degree, 2018}
     \includegraphics[width=1 \textwidth]{Exam/Figures/NxPairPlot.png}
   \label{fig:Btwns_CC}
 \end{figure}
+\noindent
+In the end, we use clustering coefficient, betweenness and degree as features in the prediction model. Note, that these are all node-specific measures, and as such, for each observation, there are two of each corresponding to origin and destination airport. 
+
 \subsection{Network vulnerability}
 We conduct an analysis of how the network is affected when certain nodes are removed. This analysis is, broadly, in line with the analysis in \cite{chi2004structural}. \\
 The figure below shows how key network characteristics (average degree, clustering coefficient and global efficiency) are affected, when nodes are removed. One curve corresponds to removal of the most connected nodes, this is what we refer to as an 'attack' on the network, where the hubs are targeted. \\
