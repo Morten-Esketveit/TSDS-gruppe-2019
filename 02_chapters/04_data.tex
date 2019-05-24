@@ -4,12 +4,12 @@
 % Descriptive statistics of the	main variables in the analysis
 The data used in the analysis is comprised of data from multiple sources. We utilize three 'types' of data:
 \begin{itemize}
-    \item Data on airports. In the network setting, these correspond to nodes in the network. 
-    \item Data on flights. These dataset contain information on flights between airports. As will be described in detail below, we have access to a rich dataset on US flights. In the network setting, this information corresponds to links in the network.
-    \item Prices. Data on prices is generally harder to obtain. For this reason, we have chosen to scrape web-data on prices from \textit{Skyscanner}.
+    \item \textit{Data on airports}. In the network setting, these correspond to nodes in the network. 
+    \item \textit{Data on flights}. These data sets contain information on flights between airports. As will be described in detail below, we have access to a rich data on US flights. In the network setting this information corresponds to links in the network.
+    \item \textit{Prices}. Data on prices is generally harder to obtain. For this reason, we have chosen to scrape web-data on prices from \href{https://skyscanner.com}{Skyscanner}.
 \end{itemize}
 
-\subsection{Airport Data}
+\subsection{Airport Data (T)}
 Data on airports and comes from OpenFlights.\footnote{Available at: \url{https://openflights.org/data.html}} The dataset is being updated continuously and contains airport IATA code, name, city, country, geographical location (crs: WTS84), as well as a unique OpenFlights identifier, ICAO code and altitude. The dataset contains information on a total of 7,698 airports worldwide, of which 1,518 are located in the United States. Throughout the analysis, we focus on the airports that are found at least once in our dataset on flights, which is a total of 358 airports in 2018.
 %Data on airports comes from two overlapping sources. Firstly, we have a dataset from the 2009 Statistical Computing Data Expo\footnote{Available at \url{http://stat-computing.org/dataexpo/2009/}}. This dataset contains information 3376 US airports, and the unique IATA\footnote{International Air Transport Association} code, airport name, city, country and geographical location in WTS84 coordinates. This dataset contains 3.376 observations of individual airports. As will be described in \ref{subsec:Flight_Data}, we only have information on flights/connections to and from a subset of these. A likely explanation is, that a number of these airports are not used for commercial air transport, but rather for e.g. training/sports purposes.\par
 % Tjek at det reelt er WTS84 koordinater - det ser sådan ud.
@@ -17,9 +17,9 @@ Data on airports and comes from OpenFlights.\footnote{Available at: \url{https:/
 
 %We will primarily use the OpenFlights data, whenever the analysis has a global scope. This dataset contains information on 7543 individual airports.
 
-\subsection{Flights Data}
+\subsection{Flights Data (M)}
 \label{subsec:Flight_Data}
-Flight data comes from the Bureau of Transportation Statistics, United States Department of Transportation\footnote{Reporting Carrier On-time Performance 1987- (Accessed: 17-05-2019): \url{https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236}}. The dataset covers all scheduled fligths by carriers (airlines) that account for at least one percent of domestic scheduled passenger revenues. To assess how the network has changed over time we collect flight data for 1998, 2008, and 2018. Each of the datasets include information on several million commercial flights within the US. For each flight, we have a range of information, including the aircraft carrier, origin and destination (IATA coded), distance travelled, time in air date etc. Flight data can be merged with airport data using the IATA codes on airports. The result is a network linking all US airports with at least one direct flight during that year.
+Flights data comes from the Bureau of Transportation Statistics, United States Department of Transportation\footnote{Reporting Carrier On-time Performance 1987- (Accessed: 17-05-2019):\\ \url{https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236}}. The dataset covers all scheduled fligths by carriers (airlines) that account for at least one percent of domestic scheduled passenger revenues. To assess how the network has changed over time we collect flight data for 1998, 2008, and 2018. Each of the datasets include information on several million commercial flights within the US. For each flight, we have a range of information, including the aircraft carrier, origin and destination (IATA coded), distance travelled, time in air date etc. Flight data can be merged with airport data using the IATA codes on airports. The result is a network linking all US airports with at least one direct flight during that year.
 %% Update: Flights data fra bts.gov og fra stat-comp (men det er igen fra bts.gov).
 % Airports data: Bruger kun OpenFlights datasættet. 
 %Data on airports and connections is available at: \href{https://openflights.org/data.html}{openflights.org/data.html}. See Figure \ref{fig:airports} below. The dataset includes an airport identifier (IATA code), location data (latitude and longitude), and various characteristics of the airport (country, city, altitude etc.).
@@ -29,13 +29,9 @@ Flight data comes from the Bureau of Transportation Statistics, United States De
 %\par
 %Alternative data:  \url{http://stat-computing.org/dataexpo/2009/}
 
-\subsection{Price Data}
-We scrape the price data from \url{skyscanner.com} using the \texttt{Selenium} package in Python. The scraper function launches a browser and opens the URL for a given flight at our chosen date which is May 27th. If possible the price of the cheapest direct flight is chosen. The prices of flights operated by Southwest Airlines are not shown at Skyscanner. If their flight is the only one operating, the price of the cheapest indirect flight is chosen. The cheapest indirect flight is also chosen if no carrier is operating a direct flight at the date. For routes where we could not find a price this date, the script is rerun for the next day, the 28th. In order to reduce the number of searches without result and thereby reduce time, we only choose routes with an average of more than one flight per week.\footnote{See Github for our Jupyter notebooks and data, \url{https://github.com/Morten-Esketveit/TSDS-gruppe-2019}}
-
-There is a number of limitations to our approach. First, in order to reduce the scraping time, we are scraping prices for only 1 day. This implies that routes not operated on this particular Monday (and Tuesday) are not in the data set. Furthermore choosing one specific date is problematic since prices shows systematic changes across weekdays, and seasonality across the year. This approach is likely not to give an accurate measure of prices in general may cause our prediction model to perform badly. 
-
-The price dataset consist of prices for 5.283 of the total 6.425 routes. There is a number routes that turn out to have extremely high prices. This is because these routes are operated by some sort of air taxi company. Modelling these prices is beyond the scope of this paper and therefore we remove them from the dataset. The final dataset consists of 5.083 observations.
-
-
-
-
+\subsection{Price Data (C)}
+We scrape the price data from \href{http://skyscanner.com}{skyscanner.com} using the \texttt{Selenium} package for Python. The scraper function launches a browser and opens the URL for a given flight at our chosen date which is Monday, May \nth{27} 2019. If possible, the price of the cheapest direct flight is chosen instead. The prices of flights operated by Southwest Airlines are not shown at Skyscanner. If their flight is the only one operating, the price of the cheapest indirect flight is chosen. The cheapest indirect flight is also chosen if no carrier is operating a direct flight at the date. For routes where we could not find a price this date, the script is rerun for the next day, the \nth{28}. In order to reduce the number of searches without result and thereby reduce time, we only choose routes with an average of more than one flight per week.\footnote{See Github for documentation and data: \url{https://github.com/Morten-Esketveit/TSDS-gruppe-2019}}
+\medskip\\
+There is a number of limitations to our approach. First, in order to reduce the scraping time, we are scraping prices for only 1 day. This implies that routes not operated on this particular Monday (nor Tuesday) are missing in the data set. Furthermore, choosing one specific date is problematic since prices show systematic changes across weekdays, and seasonality across the year. This approach is likely not to give an accurate measure of prices in general which may cause our prediction model to perform badly out of sample.
+\medskip\\
+The price data set consist of prices for 5,283 of the total 6,425 routes. There is a number of routes that turn out to have extremely high prices because these routes are being operated by some sort of \textit{air taxi} company. Modelling these prices is beyond the scope of this paper and therefore we remove them from the data set to end up with 5,083 observations.
