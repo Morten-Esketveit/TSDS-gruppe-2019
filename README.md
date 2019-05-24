@@ -6,7 +6,7 @@ See [abjer/tsds](https://github.com/abjer/tsds) for the public course material.
 ### Prices in Air Transport - *Can Airport Network Characteristics Aid in Prediction?*
 
 From the abstract in our [project paper](https://github.com/Morten-Esketveit/TSDS-gruppe-2019/blob/master/main.pdf):
->> *"In this paper, we investigate whether network-related features of airports can add predictive power to a model predicting flight prices. We analyze the domestic US air transport sector as a network with airports as nodes, and direct flights as links."*
+> *"In this paper, we investigate whether network-related features of airports can add predictive power to a model predicting flight prices. We analyze the domestic US air transport sector as a network with airports as nodes, and direct flights as links."*
 
 #### Overview of notebooks
 The following notebooks are used for the paper: 
